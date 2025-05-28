@@ -15,6 +15,7 @@ public class Pedestal : Interactable
     [SerializeField] private Renderer sarcophagusRenderer;
     [SerializeField] private Material cristalMaterial;
     [SerializeField] private float maxRotationX = 45;
+    [SerializeField] private Camera cam;
     private Material originalSarcophagusMaterial;
 
     private PlayerInputs playerInputs;
@@ -185,7 +186,7 @@ public class Pedestal : Interactable
         {
             lineRenderer.gameObject.SetActive(false);
             sarcophagusCristal.Hit();
-            InteractEvent.RemoveListener(OnCristalInteracted);           
+            InteractEvent.RemoveListener(OnCristalInteracted);
             Completed?.Invoke();
             puzzleDone = true;
             CanInteract = false;
@@ -206,6 +207,7 @@ public class Pedestal : Interactable
         lineRenderer.gameObject.SetActive(true);
         glowLight.gameObject.SetActive(true);
         pedestalInstructions.gameObject.SetActive(true);
+        cam.gameObject.SetActive(true);
 
         crosshairUI.gameObject.SetActive(false);
         playerUIInventory.SetActive(false);
@@ -218,6 +220,8 @@ public class Pedestal : Interactable
         pedestalInstructions.gameObject.SetActive(false);
         playerUIInventory.SetActive(true);
         crosshairUI.gameObject.SetActive(true);
+
+        cam.gameObject.SetActive(false);
 
         EnablePlayerControls();
     }

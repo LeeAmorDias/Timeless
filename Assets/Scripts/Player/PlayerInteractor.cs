@@ -57,6 +57,8 @@ public class PlayerInteractor : MonoBehaviour
 
         // Find the PlayerInputs component.
         playerInputs = FindFirstObjectByType<PlayerInputs>();
+
+        canInteract = false;
     }
 
     private void Update()

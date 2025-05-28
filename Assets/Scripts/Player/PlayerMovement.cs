@@ -114,6 +114,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Log("Player movement initialized successfully.");
+
+        CanMove = false;
     }
 
     private void FixedUpdate()

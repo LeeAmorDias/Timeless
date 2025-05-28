@@ -61,6 +61,16 @@ public class PlayerCameraRotation : MonoBehaviour
             Debug.LogWarning($"{nameof(PlayerCameraRotation)} could not find a {nameof(PlayerInputs)} in the scene. Instantiating a new one.");
             playerInputs = Instantiate(new PlayerInputs());
         }
+
+        CanLookAround = false;
+
+        Vector3 rot = transform.localRotation.eulerAngles;
+
+        yaw = rot.y;
+        pitch = rot.x;
+
+        targetYaw = yaw;    
+        targetPitch = pitch;
     }
 
 

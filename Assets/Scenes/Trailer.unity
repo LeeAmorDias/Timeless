@@ -1027,8 +1027,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.7075472, g: 0.5322082, b: 0.2236116, a: 1}
-  m_Intensity: 1.1111351
-  m_Range: 3.4666812
+  m_Intensity: 1.2162657
+  m_Range: 3.5297594
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -13043,6 +13043,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  anim: {fileID: 0}
 --- !u!1 &241190093
 GameObject:
   m_ObjectHideFlags: 0
@@ -13331,6 +13332,7 @@ MonoBehaviour:
   sarcophagusRenderer: {fileID: 999919511}
   cristalMaterial: {fileID: 2100000, guid: 43824a305e9acee469dac7ab29a4f8ca, type: 2}
   maxRotationX: 25
+  cam: {fileID: 0}
 --- !u!1 &253614024
 GameObject:
   m_ObjectHideFlags: 0
@@ -18459,7 +18461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &407328036
 Transform:
   m_ObjectHideFlags: 0
@@ -23706,6 +23708,7 @@ MonoBehaviour:
   sarcophagusRenderer: {fileID: 1853972052964364574}
   cristalMaterial: {fileID: 2100000, guid: 12dedaeafda9b1844bf92d4e83cd7648, type: 2}
   maxRotationX: 25
+  cam: {fileID: 0}
 --- !u!114 &627606985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34750,8 +34753,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.7372549, b: 0.2784314, a: 1}
-  m_Intensity: 0.36083156
-  m_Range: 1.0369439
+  m_Intensity: 0.53882587
+  m_Range: 1.0962753
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -47858,8 +47861,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 0.74741775
-  m_Range: 2.1580591
+  m_Intensity: 0.87716216
+  m_Range: 2.5905404
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -51514,6 +51517,7 @@ GameObject:
   - component: {fileID: 1487001803}
   - component: {fileID: 1487001802}
   - component: {fileID: 1487001801}
+  - component: {fileID: 1487001806}
   m_Layer: 0
   m_Name: Cameras
   m_TagString: Untagged
@@ -51530,7 +51534,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1487001800}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 8f5bfd309b12cef438eb90f9e280fc8e, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: e96285198f1bcac429f1ccc468922588, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -51552,6 +51556,14 @@ PlayableDirector:
     value: {fileID: 1330128910}
   - key: {fileID: -5921783180595688925, guid: 8f5bfd309b12cef438eb90f9e280fc8e, type: 2}
     value: {fileID: 951410382}
+  - key: {fileID: -7144692849081795653, guid: e96285198f1bcac429f1ccc468922588, type: 2}
+    value: {fileID: 1487001802}
+  - key: {fileID: -5921783180595688925, guid: e96285198f1bcac429f1ccc468922588, type: 2}
+    value: {fileID: 951410382}
+  - key: {fileID: -5307860262179796647, guid: e96285198f1bcac429f1ccc468922588, type: 2}
+    value: {fileID: 1330128910}
+  - key: {fileID: -2317108020212387535, guid: e96285198f1bcac429f1ccc468922588, type: 2}
+    value: {fileID: 1718717459}
   m_ExposedReferences:
     m_References:
     - c63212663693550449ca6670d4d39289: {fileID: 1289103588}
@@ -51701,6 +51713,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1487001806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487001800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ae343308cd61f498e80858fc4962f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1487222372
 GameObject:
   m_ObjectHideFlags: 0
@@ -60918,6 +60942,7 @@ GameObject:
   - component: {fileID: 1718717461}
   - component: {fileID: 1718717460}
   - component: {fileID: 1718717459}
+  - component: {fileID: 1718717462}
   m_Layer: 0
   m_Name: cam entrar
   m_TagString: Untagged
@@ -61005,6 +61030,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0.2438879, y: 1.204512e-10, z: 0.00000005659811}
+--- !u!114 &1718717462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718717458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ae343308cd61f498e80858fc4962f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1722545064
 GameObject:
   m_ObjectHideFlags: 0
@@ -67854,8 +67891,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 1.8909789
-  m_Range: 3.1563916
+  m_Intensity: 1.6539897
+  m_Range: 3.061596
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -68221,8 +68258,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.7372549, b: 0.2784314, a: 1}
-  m_Intensity: 0.7416947
-  m_Range: 1.1638982
+  m_Intensity: 0.99912804
+  m_Range: 1.2497094
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -68723,8 +68760,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 1.9627078
-  m_Range: 4.9627075
+  m_Intensity: 1.7374616
+  m_Range: 4.7374616
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -70077,6 +70114,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  anim: {fileID: 0}
 --- !u!1 &2000165397
 GameObject:
   m_ObjectHideFlags: 0

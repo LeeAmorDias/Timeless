@@ -9,7 +9,7 @@ public class Endgame : MonoBehaviour
         if (other.gameObject.layer == 6)
         {
             // Load the Main Menu scene
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("Trailer");
         }
     }
 }

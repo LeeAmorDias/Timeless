@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Textures/UI/New.meta
 guid: 77ee076b8f5a99340a262f58658a8385
 folderAsset: yes
 DefaultImporter:
+========
+guid: 13b83882759f9454382a0432bed5f3fc
+NativeFormatImporter:
+>>>>>>>> 9bb908b0cf0f34e44c98facf615fcc30e05d5923:Assets/Materials/room/TimeMachine/TimeMachineInside.mat.meta
   externalObjects: {}
+  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

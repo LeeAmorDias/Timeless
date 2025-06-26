@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b1707758307994294ca3ff3dcb8da7, type: 3}
   m_Name: GearWildWest
   m_EditorClassIdentifier: 
-  ID: 21
+  ID: 15
   Icon: {fileID: 21300000, guid: 75a17d3d05eb4364e8823a9fe5788404, type: 3}
   Name: GearWildWest
   era: 4

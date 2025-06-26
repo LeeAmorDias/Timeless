@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b1707758307994294ca3ff3dcb8da7, type: 3}
   m_Name: StoneLeaf
   m_EditorClassIdentifier: 
-  ID: 6
+  ID: 19
   Icon: {fileID: 21300000, guid: 1d2e36d7e7a66174882e2cd69853f8bf, type: 3}
   Name: StoneLeaf
   era: 0

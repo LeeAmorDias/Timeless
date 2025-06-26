@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b1707758307994294ca3ff3dcb8da7, type: 3}
   m_Name: Shield
   m_EditorClassIdentifier: 
-  ID: 14
+  ID: 16
   Icon: {fileID: 21300000, guid: 1e7d8c0e345622e499d48331d0fd08b4, type: 3}
   Name: Shield
   era: 2

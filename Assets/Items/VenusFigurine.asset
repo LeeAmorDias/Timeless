@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b1707758307994294ca3ff3dcb8da7, type: 3}
   m_Name: VenusFigurine
   m_EditorClassIdentifier: 
-  ID: 3
+  ID: 23
   Icon: {fileID: 21300000, guid: ff3dad3d00326be4693d299273e17426, type: 3}
   Name: VenusFigurine
   era: 0

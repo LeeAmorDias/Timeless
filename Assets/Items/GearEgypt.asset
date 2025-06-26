@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b1707758307994294ca3ff3dcb8da7, type: 3}
   m_Name: GearEgypt
   m_EditorClassIdentifier: 
-  ID: 18
+  ID: 12
   Icon: {fileID: 21300000, guid: ee19c608e518f4145ab4099cbbf81b69, type: 3}
   Name: GearEgypt
   era: 4

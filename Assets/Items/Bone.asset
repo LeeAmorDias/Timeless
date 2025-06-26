@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b1707758307994294ca3ff3dcb8da7, type: 3}
   m_Name: Bone
   m_EditorClassIdentifier: 
-  ID: 2
+  ID: 1
   Icon: {fileID: 21300000, guid: 9eb5b1f4b01a4984d8eea80f9b7498bc, type: 3}
   Name: Bone
   era: 0

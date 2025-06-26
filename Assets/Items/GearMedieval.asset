@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b1707758307994294ca3ff3dcb8da7, type: 3}
   m_Name: GearMedieval
   m_EditorClassIdentifier: 
-  ID: 19
+  ID: 13
   Icon: {fileID: 21300000, guid: 9625577e9446b4044bce0daad6713c87, type: 3}
   Name: GearMedieval
   era: 4

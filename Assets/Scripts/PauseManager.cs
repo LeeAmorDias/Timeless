@@ -14,6 +14,8 @@ public class PauseManager : MonoBehaviour
 
     [SerializeField]
     private GameObject Crosshair;
+    [SerializeField]
+    private GameObject invUI;
 
     private bool canPause = true;
 
@@ -50,6 +52,8 @@ public class PauseManager : MonoBehaviour
         if (IsPaused)
         {
             Crosshair.SetActive(false);
+
+            invUI?.SetActive(false);
             PauseMenu.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
@@ -57,6 +61,15 @@ public class PauseManager : MonoBehaviour
         else
         {
             Crosshair.SetActive(true);
+            if (invUI != null)
+            {
+                invUI.SetActive(true);
+                var InventoryUI = invUI.GetComponentInChildren<PlayerUIInventory>();
+                if (InventoryUI)
+                {
+                    InventoryUI.UpdateUI();
+                }
+            }
             Cursor.lockState = CursorLockMode.Locked;
             PauseMenu.SetActive(false);
             Time.timeScale = 1;

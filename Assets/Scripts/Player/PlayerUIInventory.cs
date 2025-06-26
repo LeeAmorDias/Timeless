@@ -71,8 +71,17 @@ public class PlayerUIInventory : MonoBehaviour
         {
             bool isSelected = slot.ID == item.ID;
             slot.GetComponent<Animator>().SetBool("Selected", isSelected);
+            slot.isSelected = isSelected;
         }
         Log($"Selected item updated: {item.Name} (ID: {item.ID})");
+    }
+
+    public void UpdateUI()
+    {
+        foreach (InventorySlotUI slot in iconDictionary.Values)
+        {
+            slot.GetComponent<Animator>().SetBool("Selected", slot.isSelected );
+        }
     }
 
     /// <summary>

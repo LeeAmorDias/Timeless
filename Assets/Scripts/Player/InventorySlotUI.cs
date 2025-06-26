@@ -33,6 +33,8 @@ public class InventorySlotUI : MonoBehaviour
     [SerializeField]
     public Image Background;
 
+    public bool isSelected;
+
     /// <summary>
     /// Sets the UI elements for the item in this inventory slot based on the given item.
     /// </summary>

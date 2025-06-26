@@ -80,6 +80,8 @@ public class InspectionsHandler : MonoBehaviour
 
     [SerializeField] private Transform objectContainer; // The container to hold the inspected object.
     [SerializeField] private GameObject inspectionInstructions;
+    [SerializeField] private GameObject inspectionInstructionsNoGrab;
+    [SerializeField] private GameObject inspectionInstructionsFromInv;
     private PlayerInputs playerInputs; // Reference to player input handling.
     private GameObject inspectingObject; // The currently inspected object.
     private Item currentItem; // The item being inspected.
@@ -139,12 +141,12 @@ public class InspectionsHandler : MonoBehaviour
     /// <param name="canBeAddedToInv">Indicates if the item can be added to the inventory.</param>
     public void StartInspection(Item item, bool canBeAddedToInv, bool isInspectingFromInv)
     {
-
         // Ensure no other object is currently being inspected.
         if ((inspectingObject == null) && (currentItem == null))
         {
             inspecting = true;
             inspectingFromInv = isInspectingFromInv;
+
             // Check if the object container is set.
             if (objectContainer == null)
             {
@@ -195,7 +197,12 @@ public class InspectionsHandler : MonoBehaviour
 
         // Enable the inspection camera.
         GetComponent<Camera>().enabled = true;
-        inspectionInstructions.SetActive(true);
+        if (inspectingFromInv)
+            inspectionInstructionsFromInv.SetActive(true);
+        else if (canBeAddedToInv)
+            inspectionInstructions.SetActive(true);
+        else
+            inspectionInstructionsNoGrab.SetActive(true);
 
         float pitch = 0; // Rotation around the X-axis.
         float yaw = 0; // Rotation around the Y-axis.
@@ -236,20 +243,20 @@ public class InspectionsHandler : MonoBehaviour
                 GetComponent<Camera>().enabled = false;
                 onInspectionEnded.Invoke(true);
                 inspecting = false;
-                inspectionInstructions.SetActive(false);
-                yield break;
+                break;
             }
 
             // Handle returning the item without adding it to the inventory.
-            if (playerInputs.ReturnButtonDown && !inspectingFromInv)
+            if (playerInputs.ReturnButtonDown)
             {
                 currentItem = null;
                 Destroy(inspectingObject);
                 GetComponent<Camera>().enabled = false;
-                onInspectionEnded.Invoke(false);
-                inspectionInstructions.SetActive(false);
+                if (inspectingFromInv) onInspectionEndedFromInv?.Invoke();
+                else onInspectionEnded.Invoke(false);
+                crosshairUI?.gameObject.SetActive(true);
                 inspecting = false;
-                yield break;
+                break;
             }
 
             if (playerInputs.GrabButtonDown && inspectingFromInv)
@@ -257,11 +264,10 @@ public class InspectionsHandler : MonoBehaviour
                 currentItem = null;
                 Destroy(inspectingObject);
                 GetComponent<Camera>().enabled = false;
-                inspectionInstructions.SetActive(false);
                 onInspectionEndedFromInv.Invoke();
                 crosshairUI?.gameObject.SetActive(true);
                 inspecting = false;
-                yield break;
+                break;
             }
 
 
@@ -272,7 +278,9 @@ public class InspectionsHandler : MonoBehaviour
 
         // If inspection ends without adding the item, trigger the event with false.
         onInspectionEnded.Invoke(false);
+        inspectionInstructionsFromInv.SetActive(false);
         inspectionInstructions.SetActive(false);
+        inspectionInstructionsNoGrab.SetActive(false);
         onInspectionEndedFromInv.Invoke();
     }
 }

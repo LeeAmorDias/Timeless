@@ -73,9 +73,11 @@ public class PlayerInteractor : MonoBehaviour
         {
             Interactable interactable = hit.transform.GetComponent<Interactable>(); // Get the Interactable component.
 
-            if (interactable == null) return; // Exit early if there is no interactable component.
-
-            if (interactable.CanInteract) // Check if the interactable object is interactable.
+            if (interactable == null)
+            {
+                shouldGrowCrosshair = false;
+            }
+            else if (interactable.CanInteract) // Check if the interactable object is interactable.
             {
                 shouldGrowCrosshair = true; // We need to grow the crosshair when interactable and can interact.
 
@@ -86,7 +88,9 @@ public class PlayerInteractor : MonoBehaviour
                     shouldGrowCrosshair = false;
                 }
             }
+            else shouldGrowCrosshair = false;
         }
+        else shouldGrowCrosshair = false;
 
         // Only change crosshair state if necessary
         if (shouldGrowCrosshair) crosshair.Grow();

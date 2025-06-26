@@ -354,6 +354,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""8c8683dd-1564-40ff-baa2-9b3401e55e63"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""a3172a46-f116-499c-9abb-ee8296eeb6bd"",
                     ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",

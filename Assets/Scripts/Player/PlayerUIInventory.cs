@@ -100,6 +100,7 @@ public class PlayerUIInventory : MonoBehaviour
 
         // Instantiate new slot and retrieve its UI component
         InventorySlotUI newSlot = Instantiate(inventorySlotPrefab).GetComponent<InventorySlotUI>();
+        newSlot.transform.localScale = Vector3.one;
         if (newSlot == null)
         {
             Debug.LogError("InventorySlotUI component missing on the inventory slot prefab!");

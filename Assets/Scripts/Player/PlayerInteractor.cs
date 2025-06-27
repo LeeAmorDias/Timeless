@@ -17,6 +17,9 @@ using UnityEngine;
 /// </summary>
 public class PlayerInteractor : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject interactToolTip;
+
     [Header("Interaction Settings")]
     [Tooltip("Layer mask used to define which objects are interactable.")]
     [SerializeField] private LayerMask interactablesLayerMask; // Defines which layers are interactable.
@@ -57,7 +60,7 @@ public class PlayerInteractor : MonoBehaviour
 
         // Find the PlayerInputs component.
         playerInputs = FindFirstObjectByType<PlayerInputs>();
-
+        interactToolTip?.SetActive(false);
         canInteract = false;
     }
 
@@ -93,8 +96,16 @@ public class PlayerInteractor : MonoBehaviour
         else shouldGrowCrosshair = false;
 
         // Only change crosshair state if necessary
-        if (shouldGrowCrosshair) crosshair.Grow();
-        else crosshair.Shrink();
+        if (shouldGrowCrosshair)
+        {
+            interactToolTip?.SetActive(true);
+            crosshair.Grow();
+        }
+        else
+        {
+            interactToolTip?.SetActive(false);
+            crosshair.Shrink();
+        }
 
     }
 

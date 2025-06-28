@@ -159,7 +159,7 @@ public class InspectionsHandler : MonoBehaviour
             {
                 this.canBeAddedToInv = canBeAddedToInv;
                 // Instantiate the item's prefab for inspection.
-                inspectingObject = Instantiate(item.Prefab, objectContainer.position, Quaternion.identity, objectContainer);
+                inspectingObject = Instantiate(item.Prefab, objectContainer.position, item.Prefab.transform.rotation, objectContainer);
                 // Begin the inspection coroutine.
                 StartCoroutine(InspectionCoroutine());
                 // Trigger the inspection started event.
@@ -193,7 +193,7 @@ public class InspectionsHandler : MonoBehaviour
         // Wait one frame to ensure initialization is complete.
         yield return null;
 
-        inspectingObject.transform.localRotation = Quaternion.identity;
+        //inspectingObject.transform.localRotation = Quaternion.identity;
 
         // Enable the inspection camera.
         GetComponent<Camera>().enabled = true;

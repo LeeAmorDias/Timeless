@@ -18,17 +18,22 @@ public class RotateObject : MonoBehaviour
     private float timeStep = 0.1f; // Time between each step in seconds
     [SerializeField]
     private float correctRotation = 180f; // Correct Rotation to have
+    [SerializeField]
+    private bool canSpamRotate = false;
 
-    public bool hasCorrectRotation {get {return Mathf.Abs(correctRotation - transform.rotation.eulerAngles.z) < 1f;} private set {}}
+    public bool hasCorrectRotation { get { return Mathf.Abs(correctRotation - transform.rotation.eulerAngles.z) < 1f; } private set { } }
 
     private List<string> axisValues { get { return new List<string>() { "X", "Y", "Z" }; } }
+
+    private bool isRotating = false;
 
     public IEnumerator RotateOverTime()
     {
         float totalRotation = 0f; // Tracks the total rotation
-        
+
         while (Mathf.Abs(totalRotation) < Mathf.Abs(maxRotation))
         {
+            isRotating = true;
             // Calculate the rotation step for this iteration
             float remainingRotation = maxRotation - totalRotation;
             float rotationThisStep = Mathf.Clamp(rotationStep, -Mathf.Abs(remainingRotation), Mathf.Abs(remainingRotation));
@@ -36,12 +41,12 @@ public class RotateObject : MonoBehaviour
             // Apply the rotation
             if (axisToRotate == "X")
                 transform.Rotate(rotationThisStep, 0f, 0f);
-            else if(axisToRotate == "Y")
+            else if (axisToRotate == "Y")
                 transform.Rotate(0f, rotationThisStep, 0f);
-            else if(axisToRotate == "Z")
+            else if (axisToRotate == "Z")
                 transform.Rotate(0f, 0f, rotationThisStep);
-            
-                
+
+
 
             // Update the total rotation
             totalRotation += rotationThisStep;
@@ -49,14 +54,16 @@ public class RotateObject : MonoBehaviour
             // Wait for the specified time step
             yield return new WaitForSeconds(timeStep);
         }
+        isRotating = false;
 
-        CheckRotations checkRotations = transform.parent.GetComponent<CheckRotations>();   
+        CheckRotations checkRotations = transform.parent.GetComponent<CheckRotations>();
         if (checkRotations != null)
             checkRotations.CheckChilds();
     }
     // Example: Start the rotation when the game starts
     public void Rotate()
     {
-        StartCoroutine(RotateOverTime());
+        if(isRotating == false || canSpamRotate)
+            StartCoroutine(RotateOverTime());
     }
 }

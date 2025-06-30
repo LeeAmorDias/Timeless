@@ -192,8 +192,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.7075472, g: 0.5322082, b: 0.2236116, a: 1}
-  m_Intensity: 1.9914908
-  m_Range: 3.9948945
+  m_Intensity: 1.8046049
+  m_Range: 3.882763
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1431,6 +1431,7 @@ MonoBehaviour:
   rotationStep: 0.2
   timeStep: 0.001
   correctRotation: 180
+  canSpamRotate: 0
 --- !u!1 &125671962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,6 +1481,7 @@ MonoBehaviour:
   rotationStep: -0.2
   timeStep: 0.001
   correctRotation: 180
+  canSpamRotate: 0
 --- !u!1 &129735306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,6 +1715,7 @@ MonoBehaviour:
   rotationStep: 0.2
   timeStep: 0.001
   correctRotation: 0
+  canSpamRotate: 1
 --- !u!114 &160448570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9233,6 +9236,7 @@ MonoBehaviour:
   rotationStep: 0.2
   timeStep: 0.001
   correctRotation: 180
+  canSpamRotate: 1
 --- !u!114 &516391009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9581,6 +9585,114 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6341547585835302948, guid: b81b3d72f9cf6da4b8c0fddeb89b1280, type: 3}
   m_PrefabInstance: {fileID: 3785479845722124450}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &584661937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 584661938}
+  - component: {fileID: 584661941}
+  - component: {fileID: 584661940}
+  - component: {fileID: 584661939}
+  m_Layer: 3
+  m_Name: Sword1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &584661938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584661937}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.285, y: 1.9, z: -4.93}
+  m_LocalScale: {x: 25.2, y: 25.2, z: 25.2}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 3969396836422664650}
+  m_Father: {fileID: 1570565344}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &584661939
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584661937}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.015, y: 0.055, z: 0.002}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &584661940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584661937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 136c2cf2684956441b0f1f9d25cce16f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axisToRotate: Z
+  maxRotation: 30
+  rotationStep: 0.2
+  timeStep: 0.001
+  correctRotation: 180
+  canSpamRotate: 1
+--- !u!114 &584661941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584661937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf70e10b86694a44b7557585a2a2863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addToInv: 0
+  item: {fileID: 0}
+  interactOnce: 0
+  pickUpSounds: []
+  volume: 1
+  audioPrefab: {fileID: 0}
+  CanInteract: 1
+  InteractEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 584661940}
+        m_TargetAssemblyTypeName: RotateObject, Assembly-CSharp
+        m_MethodName: Rotate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &586826212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11394,6 +11506,7 @@ MonoBehaviour:
   rotationStep: -0.2
   timeStep: 0.001
   correctRotation: 180
+  canSpamRotate: 0
 --- !u!1 &722837191
 GameObject:
   m_ObjectHideFlags: 0
@@ -11705,6 +11818,7 @@ MonoBehaviour:
   rotationStep: 0.2
   timeStep: 0.001
   correctRotation: 180
+  canSpamRotate: 0
 --- !u!1 &777049601
 GameObject:
   m_ObjectHideFlags: 0
@@ -14096,8 +14210,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.7372549, b: 0.2784314, a: 1}
-  m_Intensity: 0.26133654
-  m_Range: 1.0037788
+  m_Intensity: 0.6689486
+  m_Range: 1.1396495
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -20498,7 +20612,10 @@ VisualEffect:
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 2.9960785, y: 0.43443143, z: 0.14980397, w: 1}
+        m_Name: Color
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
@@ -20776,6 +20893,7 @@ MonoBehaviour:
   rotationStep: 0.1
   timeStep: 0.1
   correctRotation: 180
+  canSpamRotate: 0
 --- !u!114 &1164010913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21183,6 +21301,7 @@ MonoBehaviour:
   rotationStep: 0.1
   timeStep: 0.1
   correctRotation: 180
+  canSpamRotate: 0
 --- !u!114 &1170882893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21948,7 +22067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7651e1af8081d37469f8d9f56618e8aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: {fileID: 0}
+  volume: {fileID: 1250573637}
 --- !u!1001 &1256427997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22808,8 +22927,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 0.9199329
-  m_Range: 1.8665547
+  m_Intensity: 0.9372547
+  m_Range: 1.8954246
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -22949,6 +23068,114 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a6bcbe43a737ba7489f80c2c849cbf25, type: 3}
   m_PrefabInstance: {fileID: 257893159}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1384999527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1384999528}
+  - component: {fileID: 1384999531}
+  - component: {fileID: 1384999530}
+  - component: {fileID: 1384999529}
+  m_Layer: 3
+  m_Name: Sword2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1384999528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384999527}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: 3.95, y: 1.9, z: -4.93}
+  m_LocalScale: {x: 25.2, y: 25.2, z: 25.2}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 624935139045034691}
+  m_Father: {fileID: 1570565344}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!65 &1384999529
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384999527}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.015, y: 0.055, z: 0.002}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1384999530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384999527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 136c2cf2684956441b0f1f9d25cce16f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axisToRotate: Z
+  maxRotation: 30
+  rotationStep: 0.2
+  timeStep: 0.001
+  correctRotation: 0
+  canSpamRotate: 1
+--- !u!114 &1384999531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384999527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf70e10b86694a44b7557585a2a2863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addToInv: 0
+  item: {fileID: 0}
+  interactOnce: 0
+  pickUpSounds: []
+  volume: 1
+  audioPrefab: {fileID: 0}
+  CanInteract: 1
+  InteractEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1384999530}
+        m_TargetAssemblyTypeName: RotateObject, Assembly-CSharp
+        m_MethodName: Rotate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1394110633
 GameObject:
   m_ObjectHideFlags: 0
@@ -23001,6 +23228,7 @@ MonoBehaviour:
   rotationStep: 0.2
   timeStep: 0.001
   correctRotation: 180
+  canSpamRotate: 1
 --- !u!114 &1394110636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24452,6 +24680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1570565344}
+  - component: {fileID: 1570565345}
   m_Layer: 0
   m_Name: Swords
   m_TagString: Untagged
@@ -24472,11 +24701,39 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3969396836422664650}
-  - {fileID: 624935139045034691}
-  - {fileID: 562811990456432148}
+  - {fileID: 584661938}
+  - {fileID: 1384999528}
+  - {fileID: 1841788561}
   m_Father: {fileID: 513740750}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1570565345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570565343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbcea3d80f7465a4198f21b32b825f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Completedpuzzle:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 622846194}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  anim: {fileID: 8678730137580174227}
 --- !u!1 &1573714614
 GameObject:
   m_ObjectHideFlags: 0
@@ -26821,6 +27078,7 @@ MonoBehaviour:
   rotationStep: -0.2
   timeStep: 0.001
   correctRotation: -120
+  canSpamRotate: 0
 --- !u!95 &1834685465
 Animator:
   serializedVersion: 7
@@ -26843,6 +27101,114 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1841788560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1841788561}
+  - component: {fileID: 1841788564}
+  - component: {fileID: 1841788563}
+  - component: {fileID: 1841788562}
+  m_Layer: 3
+  m_Name: Sword3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1841788561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841788560}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.7, y: 1.9, z: -4.93}
+  m_LocalScale: {x: 25.2, y: 25.2, z: 25.2}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 562811990456432148}
+  m_Father: {fileID: 1570565344}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1841788562
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841788560}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.015, y: 0.055, z: 0.002}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1841788563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841788560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 136c2cf2684956441b0f1f9d25cce16f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axisToRotate: Z
+  maxRotation: 30
+  rotationStep: 0.2
+  timeStep: 0.001
+  correctRotation: 180
+  canSpamRotate: 1
+--- !u!114 &1841788564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841788560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf70e10b86694a44b7557585a2a2863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addToInv: 0
+  item: {fileID: 0}
+  interactOnce: 0
+  pickUpSounds: []
+  volume: 1
+  audioPrefab: {fileID: 0}
+  CanInteract: 1
+  InteractEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1841788563}
+        m_TargetAssemblyTypeName: RotateObject, Assembly-CSharp
+        m_MethodName: Rotate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1846576961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28761,8 +29127,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 1.9396864
-  m_Range: 3.1758747
+  m_Intensity: 1.5571742
+  m_Range: 3.0228696
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -29007,8 +29373,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.7372549, b: 0.2784314, a: 1}
-  m_Intensity: 0.26900783
-  m_Range: 1.006336
+  m_Intensity: 0.9937129
+  m_Range: 1.2479043
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -29355,8 +29721,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 1.6344978
-  m_Range: 4.1344976
+  m_Intensity: 2.3557086
+  m_Range: 4.8557086
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -30850,8 +31216,6 @@ GameObject:
   - component: {fileID: 797101281887107339}
   - component: {fileID: 4368497074953303726}
   - component: {fileID: 1964963309727531620}
-  - component: {fileID: 4368497074953303728}
-  - component: {fileID: 4368497074953303727}
   m_Layer: 3
   m_Name: Sword
   m_TagString: Untagged
@@ -31362,7 +31726,7 @@ GameObject:
   - component: {fileID: 624935139045034691}
   - component: {fileID: 4540733055291049318}
   - component: {fileID: 1794433685654581676}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sword2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31969,11 +32333,11 @@ Transform:
   m_GameObject: {fileID: 901936163119180974}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7, y: 1.9, z: -4.93}
-  m_LocalScale: {x: 25.2, y: 25.2, z: 25.2}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1570565344}
+  m_Father: {fileID: 1841788561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &577463170012458890
 MeshRenderer:
@@ -32162,13 +32526,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281448168342687865}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 3.95, y: 1.9, z: -4.93}
-  m_LocalScale: {x: 25.2, y: 25.2, z: 25.2}
-  m_ConstrainProportionsScale: 1
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1570565344}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_Father: {fileID: 1384999528}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &626025364345628982
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -32577,7 +32941,7 @@ GameObject:
   - component: {fileID: 562811990456432148}
   - component: {fileID: 3485884039933688241}
   - component: {fileID: 1694671058455727483}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sword3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38305,6 +38669,7 @@ MonoBehaviour:
   rotationStep: -0.2
   timeStep: 0.001
   correctRotation: 180
+  canSpamRotate: 0
 --- !u!4 &3784285130119033523
 Transform:
   m_ObjectHideFlags: 0
@@ -38981,11 +39346,11 @@ Transform:
   m_GameObject: {fileID: 4349898659848526704}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.285, y: 1.9, z: -4.93}
-  m_LocalScale: {x: 25.2, y: 25.2, z: 25.2}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1570565344}
+  m_Father: {fileID: 584661938}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3975113103834442901
 MeshFilter:
@@ -39577,7 +39942,7 @@ GameObject:
   - component: {fileID: 3969396836422664650}
   - component: {fileID: 52348783979613807}
   - component: {fileID: 2836438428459448997}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sword1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39610,57 +39975,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19157650593014705}
   m_Mesh: {fileID: -4795480139910739428, guid: 5e204bf31208ec546a30244a346115cb, type: 3}
---- !u!114 &4368497074953303727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 19157650593014705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 136c2cf2684956441b0f1f9d25cce16f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  axisToRotate: X
-  maxRotation: 25
-  rotationStep: 0.1
-  timeStep: 0.1
-  correctRotation: 180
---- !u!114 &4368497074953303728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 19157650593014705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daf70e10b86694a44b7557585a2a2863, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  addToInv: 0
-  item: {fileID: 0}
-  interactOnce: 0
-  pickUpSounds: []
-  volume: 1
-  audioPrefab: {fileID: 0}
-  CanInteract: 1
-  InteractEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4368497074953303727}
-        m_TargetAssemblyTypeName: RotateObject, Assembly-CSharp
-        m_MethodName: Rotate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!4 &4391875075872245158
 Transform:
   m_ObjectHideFlags: 0
@@ -41615,6 +41929,7 @@ MonoBehaviour:
   rotationStep: -0.2
   timeStep: 0.001
   correctRotation: 180
+  canSpamRotate: 0
 --- !u!4 &5298326607836905692
 Transform:
   m_ObjectHideFlags: 0
@@ -45980,6 +46295,7 @@ MonoBehaviour:
   rotationStep: 0.2
   timeStep: 0.001
   correctRotation: 180
+  canSpamRotate: 0
 --- !u!4 &6759084470408917489
 Transform:
   m_ObjectHideFlags: 0
@@ -46272,6 +46588,7 @@ MonoBehaviour:
   rotationStep: -0.2
   timeStep: 0.001
   correctRotation: 180
+  canSpamRotate: 0
 --- !u!1 &6822476942731165542
 GameObject:
   m_ObjectHideFlags: 0
@@ -48143,6 +48460,7 @@ MonoBehaviour:
   rotationStep: -0.2
   timeStep: 0.001
   correctRotation: 180
+  canSpamRotate: 0
 --- !u!1 &7464100944703581015
 GameObject:
   m_ObjectHideFlags: 0
@@ -49345,6 +49663,7 @@ MonoBehaviour:
   rotationStep: 0.2
   timeStep: 0.001
   correctRotation: 180
+  canSpamRotate: 0
 --- !u!4 &7695558501434192926
 Transform:
   m_ObjectHideFlags: 0
@@ -51439,6 +51758,7 @@ MonoBehaviour:
   rotationStep: 0.8
   timeStep: 0.001
   correctRotation: 180
+  canSpamRotate: 0
 --- !u!114 &8111171020152772616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58857,6 +59177,7 @@ MonoBehaviour:
   rotationStep: 0.2
   timeStep: 0.001
   correctRotation: 180
+  canSpamRotate: 0
 --- !u!4 &9096507307956451045
 Transform:
   m_ObjectHideFlags: 0

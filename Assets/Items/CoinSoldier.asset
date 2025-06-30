@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CoinSoldier
   m_EditorClassIdentifier: 
   ID: 8
-  Icon: {fileID: 21300000, guid: c9b97747e2e10dc4b83deaeafac58b58, type: 3}
+  Icon: {fileID: 21300000, guid: ce85154c5f6b9c149be0943ff218789a, type: 3}
   Name: CoinSoldier
   era: 2
   Prefab: {fileID: 7619165579242379393, guid: 0d8b71c4ec7f2a845a2efbcbc48d3dda, type: 3}

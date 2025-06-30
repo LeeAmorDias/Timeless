@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cristal
   m_EditorClassIdentifier: 
   ID: 11
-  Icon: {fileID: 21300000, guid: 494e80e1d1d2ba749a0118631ae92696, type: 3}
+  Icon: {fileID: 21300000, guid: 5bd6fb28d18126f41a0fb96ca2a3ef33, type: 3}
   Name: Cristal
   era: 3
   Prefab: {fileID: 8553774238689004118, guid: a996142de87fc374f84a829b68e42a69, type: 3}

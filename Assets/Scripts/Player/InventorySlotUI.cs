@@ -19,9 +19,6 @@ public class InventorySlotUI : MonoBehaviour
     [Tooltip("The image component that displays the icon of the item in this inventory slot.")]
     public Image Icon;
 
-    [Tooltip("The image component that represents the outline of the inventory slot.")]
-    public Image Outline;
-
     // The unique identifier for the item stored in this slot.
     [HideInInspector]
     public int ID;
@@ -29,9 +26,6 @@ public class InventorySlotUI : MonoBehaviour
     // The name of the item displayed in this slot.
     [HideInInspector]
     public string ItemName;
-
-    [SerializeField]
-    public Image Background;
 
     public bool isSelected;
 
@@ -53,8 +47,6 @@ public class InventorySlotUI : MonoBehaviour
 
     public void SetActive(bool b)
     {
-        Outline.gameObject.SetActive(b);
         Icon.gameObject.SetActive(b);
-        Background.gameObject.SetActive(b);
     }
 }

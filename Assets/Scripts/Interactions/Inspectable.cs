@@ -131,6 +131,7 @@ public class Inspectable : MonoBehaviour
         crosshairUI?.gameObject.SetActive(true);
         inspectionsHandler.onInspectionStarted.RemoveListener(OnInspectionStarted);
         inspectionsHandler.onInspectionEnded.RemoveListener(OnInspectionEnded);
+        
 
     }
 

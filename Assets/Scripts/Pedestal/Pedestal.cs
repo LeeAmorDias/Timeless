@@ -16,11 +16,11 @@ public class Pedestal : Interactable
     [SerializeField] private Material cristalMaterial;
     [SerializeField] private float maxRotationX = 45;
     [SerializeField] private Camera cam;
+    [SerializeField] private GameObject playerUIInventory;
     private Material originalSarcophagusMaterial;
 
     private PlayerInputs playerInputs;
     private CrosshairUI crosshairUI;
-    private PlayerUIInventory playerUIInventory;
     private bool puzzleDone = false;
     private bool coroutineEnded = true;
     private float timeOnCristal = 0;
@@ -48,7 +48,6 @@ public class Pedestal : Interactable
         pedestalCamera.gameObject.SetActive(false);
 
         crosshairUI = FindFirstObjectByType<CrosshairUI>();
-        playerUIInventory = FindFirstObjectByType<PlayerUIInventory>();
 
         originalSarcophagusMaterial = sarcophagusRenderer.material;
     }

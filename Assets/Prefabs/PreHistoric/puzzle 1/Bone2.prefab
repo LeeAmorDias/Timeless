@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8734415776421872286
+--- !u!1 &3645881624192541741
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7456777326389561326}
-  - component: {fileID: 3629092871201513754}
-  - component: {fileID: 3298685457520371411}
-  - component: {fileID: 1313995018679966317}
-  - component: {fileID: 7105023137743845208}
-  - component: {fileID: 2671982761653646039}
+  - component: {fileID: 7132141552858358566}
+  - component: {fileID: 1562935920519743719}
+  - component: {fileID: 7830504590391423247}
+  - component: {fileID: 8842671210775074076}
+  - component: {fileID: 3430138157367382094}
+  - component: {fileID: 4703905689174566604}
   m_Layer: 3
-  m_Name: berries
+  m_Name: Bone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!4 &7456777326389561326
+--- !u!4 &7132141552858358566
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8734415776421872286}
+  m_GameObject: {fileID: 3645881624192541741}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.9413345, y: 0.67695636, z: 4.2561784}
-  m_LocalScale: {x: 12, y: 12, z: 12}
+  m_LocalRotation: {x: 0, y: 0.9659259, z: -0, w: -0.25881898}
+  m_LocalPosition: {x: 4.224, y: 0.037, z: 3.344}
+  m_LocalScale: {x: 36.190002, y: 36.19, z: 36.190002}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3629092871201513754
+  m_LocalEulerAnglesHint: {x: 0, y: 210, z: 0}
+--- !u!33 &1562935920519743719
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8734415776421872286}
-  m_Mesh: {fileID: 8850116265518966187, guid: 9a481ed59e6674f42b7f87e5abe76a1c, type: 3}
---- !u!23 &3298685457520371411
+  m_GameObject: {fileID: 3645881624192541741}
+  m_Mesh: {fileID: 6329158148709259305, guid: 835e8175afcee9549baec536faf022d3, type: 3}
+--- !u!23 &7830504590391423247
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8734415776421872286}
+  m_GameObject: {fileID: 3645881624192541741}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 21fcec528b8f7e1478643b7835b0317c, type: 2}
+  - {fileID: 2100000, guid: 9de63d7fd742b8343aeaaf8fa2d2f898, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,13 +89,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1313995018679966317
+--- !u!65 &8842671210775074076
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3645881624192541741}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.013836371, y: 0.0022455365, z: 0.0047405604}
+  m_Center: {x: 6.984921e-10, y: 0, z: 0}
+--- !u!114 &3430138157367382094
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8734415776421872286}
+  m_GameObject: {fileID: 3645881624192541741}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: daf70e10b86694a44b7557585a2a2863, type: 3}
@@ -104,14 +125,15 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSounds: []
+  pickUpSounds:
+  - {fileID: 8300000, guid: dbd8c96c5d3777846a4ba2aac1731a24, type: 3}
   volume: 1
-  audioPrefab: {fileID: 0}
+  audioPrefab: {fileID: 5713373137800223788, guid: 3213fcd6cbd5502409aa087e59d331e4, type: 3}
   CanInteract: 1
   InteractEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8734415776421872286}
+      - m_Target: {fileID: 3645881624192541741}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -123,25 +145,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7105023137743845208}
+      - m_Target: {fileID: 4703905689174566604}
         m_TargetAssemblyTypeName: Inspectable, Assembly-CSharp
         m_MethodName: StartInspection
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: adf3d2a0815f4d54aa7dd01152602343, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 9365e9e89dba5cc4eaf730705b494dbb, type: 2}
           m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7105023137743845208
+--- !u!114 &4703905689174566604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8734415776421872286}
+  m_GameObject: {fileID: 3645881624192541741}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 052d4b38a43b7c242879ccccc6994d30, type: 3}
@@ -150,7 +172,7 @@ MonoBehaviour:
   onInspectionEnded:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8734415776421872286}
+      - m_Target: {fileID: 3645881624192541741}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 0
@@ -166,24 +188,3 @@ MonoBehaviour:
   showDebugMessages: 0
   identifyObject: 1
   inspectingFromInv: 0
---- !u!65 &2671982761653646039
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8734415776421872286}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.021143727, y: 0.010309466, z: 0.019995436}
-  m_Center: {x: -0.0000027674237, y: 0.00007673144, z: -0.0007597967}

@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -96,12 +97,19 @@ public class ItemDisplayer : MonoBehaviour
         if (displayedObject == null && displayedItem == null)
         {
             // Instantiate the item prefab and place it at the display position.
-            displayedObject = Instantiate(item.Prefab, displayPos.position, item.Prefab.transform.rotation);      
+            displayedObject = Instantiate(item.Prefab, displayPos.position, displayPos.rotation);      
             displayedObject.transform.SetParent(displayPos);
+            if (item.biggerSize.x  > 0 || item.biggerSize.y > 0 || item.biggerSize.z > 0)
+                displayedObject.transform.localScale = item.biggerSize;
+
+            if (item.newRotation.x  > 0 || item.newRotation.y > 0 || item.newRotation.z > 0)
+                displayedObject.transform.rotation = item.newRotation;
             
         
             // Set the current item as the displayed item.
             displayedItem = item;
+
+
             // Set the Y position to 1, while keeping X and Z unchanged
             Vector3 currentPosition = displayedObject.transform.position;
             currentPosition.y += item.heightWhenPlacedY;

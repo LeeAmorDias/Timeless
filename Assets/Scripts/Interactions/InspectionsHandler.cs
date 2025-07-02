@@ -218,7 +218,6 @@ public class InspectionsHandler : MonoBehaviour
                 pos.z = Mathf.Clamp(pos.z, minDistance, maxDistance); // Clamp zoom within limits.
                 inspectingObject.transform.localPosition = pos;
             }
-
             // Handle rotation input if the rotate button is pressed.
             if (playerInputs.RotateButton)
             {
@@ -249,6 +248,7 @@ public class InspectionsHandler : MonoBehaviour
             // Handle returning the item without adding it to the inventory.
             if (playerInputs.ReturnButtonDown)
             {
+                
                 currentItem = null;
                 Destroy(inspectingObject);
                 GetComponent<Camera>().enabled = false;
@@ -256,11 +256,12 @@ public class InspectionsHandler : MonoBehaviour
                 else onInspectionEnded.Invoke(false);
                 crosshairUI?.gameObject.SetActive(true);
                 inspecting = false;
+                
                 break;
             }
 
             if (playerInputs.GrabButtonDown && inspectingFromInv)
-            {
+            {      
                 currentItem = null;
                 Destroy(inspectingObject);
                 GetComponent<Camera>().enabled = false;
@@ -277,10 +278,12 @@ public class InspectionsHandler : MonoBehaviour
         }
 
         // If inspection ends without adding the item, trigger the event with false.
-        onInspectionEnded.Invoke(false);
+        if(!inspectingFromInv)
+            onInspectionEnded.Invoke(false);
         inspectionInstructionsFromInv.SetActive(false);
         inspectionInstructions.SetActive(false);
         inspectionInstructionsNoGrab.SetActive(false);
         onInspectionEndedFromInv.Invoke();
+        
     }
 }

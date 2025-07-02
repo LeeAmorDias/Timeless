@@ -18,4 +18,6 @@ MonoBehaviour:
   era: 0
   Prefab: {fileID: 3394654022111380294, guid: 167460d23a360244bb218500c403b45e, type: 3}
   heightWhenPlacedY: 0.05
+  biggerSize: {x: 0, y: 0, z: 0}
+  newRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
   Puzzlenumber: 1

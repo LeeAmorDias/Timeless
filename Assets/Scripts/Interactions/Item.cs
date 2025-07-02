@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 /// <summary>
@@ -53,6 +54,9 @@ public class Item : ScriptableObject
     /// in case the item is being misspositioned when placed.
     /// </summary>
     public float heightWhenPlacedY = 0f;
+
+    public Vector3 biggerSize = new Vector3(0,0,0);
+    public Quaternion newRotation = Quaternion.Euler(0, 0, 0);
 
     public int Puzzlenumber = 0;
 }

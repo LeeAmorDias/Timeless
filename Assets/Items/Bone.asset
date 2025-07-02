@@ -16,6 +16,8 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 7b4b3964135ed2a438904c08a859a2d2, type: 3}
   Name: Bone
   era: 0
-  Prefab: {fileID: 331306545313407360, guid: 836f6416093dd5247b94c9d034fb2226, type: 3}
+  Prefab: {fileID: 3645881624192541741, guid: f4a6880973ff06045a8f1dbc3bf24531, type: 3}
   heightWhenPlacedY: 0
+  biggerSize: {x: 0, y: 0, z: 0}
+  newRotation: {x: 0, y: 0, z: 0, w: 1}
   Puzzlenumber: 1

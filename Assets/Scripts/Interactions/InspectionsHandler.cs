@@ -87,7 +87,7 @@ public class InspectionsHandler : MonoBehaviour
     private Item currentItem; // The item being inspected.
 
     // Maximum and minimum allowable distances for zooming during inspection.
-    private float maxDistance = 0f;
+    private float maxDistance = .25f;
     private float minDistance = -0.25f;
 
     private bool canBeAddedToInv; // Determines if the item can be added to the inventory.

@@ -192,8 +192,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.7075472, g: 0.5322082, b: 0.2236116, a: 1}
-  m_Intensity: 1.9987652
-  m_Range: 3.9992592
+  m_Intensity: 1.1263367
+  m_Range: 3.4758022
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -434,11 +434,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 0
-  rightItem: {fileID: 11400000, guid: adf3d2a0815f4d54aa7dd01152602343, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 11400000, guid: adf3d2a0815f4d54aa7dd01152602343, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 1
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -6821,11 +6821,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 0
-  rightItem: {fileID: 11400000, guid: 9365e9e89dba5cc4eaf730705b494dbb, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 11400000, guid: 9365e9e89dba5cc4eaf730705b494dbb, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 1
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -7365,11 +7365,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 0
-  rightItem: {fileID: 11400000, guid: 4ad4a7a62ab327d45b1e335e4ec70c65, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 11400000, guid: 4ad4a7a62ab327d45b1e335e4ec70c65, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 1
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -10526,11 +10526,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 3
-  rightItem: {fileID: 11400000, guid: d978e79cf6cd2de4a9f35bd7baf6d20f, type: 2}
+  <Era>k__BackingField: 3
+  <RightItem>k__BackingField: {fileID: 11400000, guid: d978e79cf6cd2de4a9f35bd7baf6d20f, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 0
+  <AcceptEra>k__BackingField: 0
   acceptOnlyRightPuzzle: 0
   selectedItem:
     m_PersistentCalls:
@@ -10853,11 +10853,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 0
-  rightItem: {fileID: 11400000, guid: a1fe4a43a26d9ef488e6d2f2bf53e000, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 11400000, guid: a1fe4a43a26d9ef488e6d2f2bf53e000, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 1
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -11107,7 +11107,7 @@ Transform:
   m_GameObject: {fileID: 658498949}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 151.7, z: 47.2}
+  m_LocalPosition: {x: -0, y: 151.7, z: 58.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12803,11 +12803,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 1
-  rightItem: {fileID: 0}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 0}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 0
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -14212,8 +14212,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.7372549, b: 0.2784314, a: 1}
-  m_Intensity: 0.6663455
-  m_Range: 1.1387818
+  m_Intensity: 0.6196607
+  m_Range: 1.1232202
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -19478,11 +19478,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 4
-  rightItem: {fileID: 11400000, guid: 21bad4fb16868dc4084960a315c1d4cf, type: 2}
+  <Era>k__BackingField: 4
+  <RightItem>k__BackingField: {fileID: 11400000, guid: 21bad4fb16868dc4084960a315c1d4cf, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 1
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -19634,10 +19634,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 8
-  m_Height: 1
+  m_Radius: 10.882979
+  m_Height: 21.76597
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.000000013518887, y: -5.1098265e-10, z: -2.8829794}
 --- !u!1 &1086651110
 GameObject:
   m_ObjectHideFlags: 0
@@ -19947,11 +19947,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 0
-  rightItem: {fileID: 11400000, guid: 3cf5b9c6f66eb2d4f863d985bc7f60db, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 11400000, guid: 3cf5b9c6f66eb2d4f863d985bc7f60db, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 1
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -20680,11 +20680,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 2
-  rightItem: {fileID: 11400000, guid: 3e4945f02e02d2842bb0d2284a6bfca6, type: 2}
+  <Era>k__BackingField: 2
+  <RightItem>k__BackingField: {fileID: 11400000, guid: 3e4945f02e02d2842bb0d2284a6bfca6, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 0
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -22604,11 +22604,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 0
-  rightItem: {fileID: 11400000, guid: 9a5baa24c2742f344ad80a6cd9a60237, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 11400000, guid: 9a5baa24c2742f344ad80a6cd9a60237, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 1
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -22955,8 +22955,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 0.7121223
-  m_Range: 1.5202038
+  m_Intensity: 0.8321211
+  m_Range: 1.7202018
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -24821,11 +24821,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 2
-  rightItem: {fileID: 11400000, guid: bca67105f8d6cae4eb7fe0033e7f2a60, type: 2}
+  <Era>k__BackingField: 2
+  <RightItem>k__BackingField: {fileID: 11400000, guid: bca67105f8d6cae4eb7fe0033e7f2a60, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 0
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -25450,11 +25450,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 2
-  rightItem: {fileID: 11400000, guid: b7ba9ba0e320a9844bb3bebd49cd6451, type: 2}
+  <Era>k__BackingField: 2
+  <RightItem>k__BackingField: {fileID: 11400000, guid: b7ba9ba0e320a9844bb3bebd49cd6451, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 0
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -25870,11 +25870,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 4
-  rightItem: {fileID: 11400000, guid: d0b8abb41a4343145b7ae9de4d805343, type: 2}
+  <Era>k__BackingField: 4
+  <RightItem>k__BackingField: {fileID: 11400000, guid: d0b8abb41a4343145b7ae9de4d805343, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 1
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -26026,10 +26026,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 8
-  m_Height: 1
+  m_Radius: 11.26764
+  m_Height: 22.535292
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.000000015312597, y: -5.8051985e-10, z: -3.2676413}
 --- !u!1 &1677482229
 GameObject:
   m_ObjectHideFlags: 0
@@ -27935,11 +27935,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 0
-  rightItem: {fileID: 11400000, guid: afe35abaf3a2e4943820deda1a41d4cd, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 11400000, guid: afe35abaf3a2e4943820deda1a41d4cd, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 1
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -28482,11 +28482,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 0
-  rightItem: {fileID: 11400000, guid: 7e706e8110709554eb8199a40716ca65, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 11400000, guid: 7e706e8110709554eb8199a40716ca65, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 1
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -29270,8 +29270,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 1.9946163
-  m_Range: 3.1978467
+  m_Intensity: 1.6063094
+  m_Range: 3.0425239
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -29516,8 +29516,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.7372549, b: 0.2784314, a: 1}
-  m_Intensity: 0.9916241
-  m_Range: 1.247208
+  m_Intensity: 0.9569353
+  m_Range: 1.235645
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -29636,11 +29636,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 4
-  rightItem: {fileID: 11400000, guid: 292f106608ae1e14ea98675734fa3793, type: 2}
+  <Era>k__BackingField: 4
+  <RightItem>k__BackingField: {fileID: 11400000, guid: 292f106608ae1e14ea98675734fa3793, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 1
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -29792,10 +29792,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 8
-  m_Height: 1
+  m_Radius: 11.98492
+  m_Height: 23.96985
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.000000018187444, y: -7.5509515e-10, z: -3.9849212}
 --- !u!1 &1988880568
 GameObject:
   m_ObjectHideFlags: 0
@@ -29864,8 +29864,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 1.6511202
-  m_Range: 4.15112
+  m_Intensity: 1.8562372
+  m_Range: 4.356237
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -30075,11 +30075,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 4
-  rightItem: {fileID: 11400000, guid: 688de5866d7f0394b9531868b064c5f0, type: 2}
+  <Era>k__BackingField: 4
+  <RightItem>k__BackingField: {fileID: 11400000, guid: 688de5866d7f0394b9531868b064c5f0, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 1
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -30231,10 +30231,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 8
-  m_Height: 1
+  m_Radius: 11.210467
+  m_Height: 22.420946
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.000000014763796, y: -6.0552174e-10, z: -3.2104688}
 --- !u!1 &2015914213
 GameObject:
   m_ObjectHideFlags: 0
@@ -30874,11 +30874,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 0
-  rightItem: {fileID: 11400000, guid: cc28a136f0f11f843b24d1a5c31e4278, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 11400000, guid: cc28a136f0f11f843b24d1a5c31e4278, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 1
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -43872,7 +43872,7 @@ GameObject:
   - component: {fileID: 2842324144739401146}
   - component: {fileID: 1718158863773508281}
   - component: {fileID: 5840803706515990618}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43898,10 +43898,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 67
-  m_Height: 360.5882
+  m_Radius: 67.8656
+  m_Height: 329.7406
   m_Direction: 1
-  m_Center: {x: 1.43, y: -2.2, z: 17.71}
+  m_Center: {x: -6.5335703, y: -17.623531, z: -5.2664814}
 --- !u!1 &5846182922446847538
 GameObject:
   m_ObjectHideFlags: 0
@@ -56097,11 +56097,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 2
-  rightItem: {fileID: 11400000, guid: 7490656f7c2ee5c4c9172f4d8a56716e, type: 2}
+  <Era>k__BackingField: 2
+  <RightItem>k__BackingField: {fileID: 11400000, guid: 7490656f7c2ee5c4c9172f4d8a56716e, type: 2}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 0
+  <AcceptEra>k__BackingField: 0
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:

@@ -21,7 +21,7 @@ using NaughtyAttributes;
 /// <para><b>Inspector Configurations:</b></para>
 /// <list type="bullet">
 /// <item><description><c>era</c>: Specifies the required era of the item.</description></item>
-/// <item><description><c>rightItem</c>: The exact item that is considered correct.</description></item>
+/// <item><description><c>RightItem</c>: The exact item that is considered correct.</description></item>
 /// <item><description><c>showDebugMessages</c>: Enables or disables debug logging.</description></item>
 /// <item><description><c>identifyObject</c>: Includes the object's name in debug messages when enabled.</description></item>
 /// </list>
@@ -33,11 +33,11 @@ using NaughtyAttributes;
 /// </remarks>
 public class InventoryItemMatcher : MonoBehaviour
 {
-    [SerializeField, Tooltip("Specifies the required era that the selected item should belong to.")]
-    private Item.Era era;
+    [field: SerializeField, Tooltip("Specifies the required era that the selected item should belong to.")]
+    public Item.Era Era { get; private set; }
 
-    [SerializeField, Tooltip("The exact item that is considered correct for this matching scenario.")]
-    private Item rightItem;
+    [field: SerializeField, Tooltip("The exact item that is considered correct for this matching scenario.")]
+    public Item RightItem {get; private set;}
 
     [Header("Debugging")]
 
@@ -47,10 +47,10 @@ public class InventoryItemMatcher : MonoBehaviour
     [SerializeField, Tooltip("If enabled, debug messages will include the object's name as an identifier."), ShowIf(nameof(showDebugMessages))]
     private bool identifyObject = true;
 
-    [SerializeField]
-    private bool acceptEra = true;
+    [field: SerializeField]
+    public bool AcceptEra { get;  private set;}
 
-    [SerializeField, ShowIf(nameof(acceptEra))]
+    [SerializeField, ShowIf(nameof(AcceptEra))]
     private bool acceptOnlyRightPuzzle = true;
 
     //"The player's inventory, used to access the selected item.
@@ -90,33 +90,40 @@ public class InventoryItemMatcher : MonoBehaviour
         // Confirm that an item is selected.
         if (selected != null)
         {
-            if (acceptEra == true){
+            if (AcceptEra == true)
+            {
                 // Check if the item's era matches the required era.
-                if (era == selected.era)
+                if (Era == selected.era)
                 {
                     //checks if its only supposed to accepth the right puzzle
-                    if(acceptOnlyRightPuzzle ){
+                    if (acceptOnlyRightPuzzle)
+                    {
                         //checks if the item is the right puzzlenumber
-                        if(rightItem.Puzzlenumber == selected.Puzzlenumber){
+                        if (RightItem.Puzzlenumber == selected.Puzzlenumber)
+                        {
                             // Check if the selected item is the correct one.
-                            if (rightItem == selected)
+                            if (RightItem == selected)
                             {
                                 Log("Right item checked!");
                                 // Set the flag to true if it's the correct item.
-                                isRightItem = true; 
+                                isRightItem = true;
                             }
                             // Invoke the event to notify that the item has been selected, passing the selected item.
                             selectedItem.Invoke(selected);
-                        }else{
+                        }
+                        else
+                        {
                             Log("Item checked is from the right era but wrong puzzle.");
                         }
-                    }else{
+                    }
+                    else
+                    {
                         // Check if the selected item is the correct one.
-                        if (rightItem == selected)
+                        if (RightItem == selected)
                         {
                             Log("Right item checked!");
                             // Set the flag to true if it's the correct item.
-                            isRightItem = true; 
+                            isRightItem = true;
                         }
                         // Invoke the event to notify that the item has been selected, passing the selected item.
                         selectedItem.Invoke(selected);
@@ -128,19 +135,20 @@ public class InventoryItemMatcher : MonoBehaviour
                     Log("Item checked is from the wrong era.");
                 }
             }
-            else{
-                    // Check if the selected item is the correct one.
-                    if (rightItem == selected)
-                    {    
-                        // Invoke the event to notify that the item has been selected, passing the selected item.
-                        selectedItem.Invoke(selected);
-                        Log("Right item checked!");
-                        isRightItem = true; // Set the flag to true if it's the correct item.
-                    }
-                    else
-                    {
+            else
+            {
+                // Check if the selected item is the correct one.
+                if (RightItem == selected)
+                {
+                    // Invoke the event to notify that the item has been selected, passing the selected item.
+                    selectedItem.Invoke(selected);
+                    Log("Right item checked!");
+                    isRightItem = true; // Set the flag to true if it's the correct item.
+                }
+                else
+                {
                     Log("Item checked is wrong.");
-                    }
+                }
             }
         }
     }

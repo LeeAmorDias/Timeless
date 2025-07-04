@@ -38,6 +38,7 @@ public class PlayerInteractor : MonoBehaviour
 
     private bool identifyObject = true; // Flag to include the object name in debug messages if debugging is enabled.
     private PlayerInputs playerInputs; // Reference to the PlayerInputs script to get player input.
+    private PlayerInventory playerInventory; // Reference to the PlayerInventory script to access the player's inventory.
     private CrosshairUI crosshair; // The crosshair UI component that will change size based on interaction availability.
 
     private bool canInteract = true;
@@ -60,6 +61,7 @@ public class PlayerInteractor : MonoBehaviour
 
         // Find the PlayerInputs component.
         playerInputs = FindFirstObjectByType<PlayerInputs>();
+        playerInventory = GetComponent<PlayerInventory>();
         interactToolTip?.SetActive(false);
         canInteract = false;
     }
@@ -76,11 +78,34 @@ public class PlayerInteractor : MonoBehaviour
         {
             Interactable interactable = hit.transform.GetComponent<Interactable>(); // Get the Interactable component.
 
+            bool isItemValid = false;
+
             if (interactable == null)
             {
                 shouldGrowCrosshair = false;
             }
-            else if (interactable.CanInteract) // Check if the interactable object is interactable.
+            else if (interactable.TryGetComponent(out InventoryItemMatcher itemMatcher))
+            {
+                Item selected = playerInventory.GetSelectedItem();
+                Item rightItem = itemMatcher.RightItem;
+                if (selected == null || rightItem == null)
+                {
+                    isItemValid = false;
+                }
+                else if (itemMatcher.AcceptEra)
+                {
+                    isItemValid = selected.era == itemMatcher.Era;
+                    Debug.Log($"{(isItemValid ? "Era match" : "Era mismatch")}");
+                }
+                else
+                {
+                    isItemValid = selected == rightItem;
+                    Debug.Log($"{(isItemValid ? "Item match" : "Item mismatch")}");
+                }
+            }
+            else isItemValid = true;
+
+            if (interactable != null && interactable.CanInteract && isItemValid) // Check if the interactable object is interactable.
             {
                 shouldGrowCrosshair = true; // We need to grow the crosshair when interactable and can interact.
 

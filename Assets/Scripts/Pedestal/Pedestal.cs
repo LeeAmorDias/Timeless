@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class Pedestal : Interactable
 {
     public UnityEvent Completed;
+
     [Header("Pedestal Setup")]
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private Transform cristalSpawnPos;
@@ -24,6 +25,8 @@ public class Pedestal : Interactable
     private bool puzzleDone = false;
     private bool coroutineEnded = true;
     private float timeOnCristal = 0;
+
+    public bool HaveCristal { get; private set; } = false;
 
     private void Awake()
     {
@@ -65,6 +68,7 @@ public class Pedestal : Interactable
         OnCristalInteracted();
         InteractEvent.AddListener(OnCristalInteracted);
         InteractEvent.RemoveListener(GetComponent<InventoryItemMatcher>().CheckItem);
+        HaveCristal = true;
         FindFirstObjectByType<PlayerInventory>().RemoveItemFromInventory(cristal);
     }
 

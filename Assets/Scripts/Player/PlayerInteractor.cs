@@ -105,7 +105,26 @@ public class PlayerInteractor : MonoBehaviour
             }
             else isItemValid = true;
 
-            if (interactable != null && interactable.CanInteract && isItemValid) // Check if the interactable object is interactable.
+            if (interactable?.TryGetComponent(out Pedestal pedestal) == true)
+            {
+                if (pedestal.CanInteract)
+                {
+                    if (playerInputs.InteractButtonDown)
+                    {
+                        interactable.Interact();
+                        shouldGrowCrosshair = false;
+                    }
+                    else if (!pedestal.HaveCristal && isItemValid)
+                    {
+                        shouldGrowCrosshair = true;
+                    }
+                    else if (pedestal.HaveCristal)
+                    {
+                        shouldGrowCrosshair = true;
+                    }
+                }
+            }
+            else if (interactable != null && interactable.CanInteract && isItemValid) // Check if the interactable object is interactable.
             {
                 shouldGrowCrosshair = true; // We need to grow the crosshair when interactable and can interact.
 

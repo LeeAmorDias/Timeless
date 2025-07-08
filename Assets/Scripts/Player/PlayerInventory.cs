@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using NaughtyAttributes;
+using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 /// <summary>
 /// Manages the player's inventory, including adding, removing, and selecting items. 
@@ -56,6 +58,8 @@ public class PlayerInventory : MonoBehaviour
 
     private bool canChangeSelection = true;
 
+    private float timer;
+
     private void Awake()
     {
         // Initialize the inventory as an empty list.
@@ -68,23 +72,33 @@ public class PlayerInventory : MonoBehaviour
 
         int lastIndex = selectedItemIndex;
 
-        // Handle item selection changes using the Q and E keys.
-        if (Input.GetKeyDown(KeyCode.Q))
+        timer += Time.deltaTime;
+
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+
+        if (timer > 0.05f)
         {
-            selectedItemIndex = (selectedItemIndex - 1 + inventory.Count) % inventory.Count;
-            Log($"Selected Item Index: {selectedItemIndex}");
-        }
-        else if (Input.GetKeyDown(KeyCode.E))
-        {
-            selectedItemIndex = (selectedItemIndex + 1) % inventory.Count;
-            Log($"Selected Item Index: {selectedItemIndex}");
+            // Handle item selection changes using the Q and E keys.
+            if (Input.GetKeyDown(KeyCode.Q) || scroll > 0f)
+            {
+                selectedItemIndex = (selectedItemIndex - 1 + inventory.Count) % inventory.Count;
+                Log($"Selected Item Index: {selectedItemIndex}");
+                timer = 0f;
+            }
+            else if (Input.GetKeyDown(KeyCode.E) || scroll < 0f)
+            {
+                selectedItemIndex = (selectedItemIndex + 1) % inventory.Count;
+                Log($"Selected Item Index: {selectedItemIndex}");
+                timer = 0f;
+            }
+
+            // If the selected item has changed, invoke the event for selection change.
+            if (selectedItemIndex != lastIndex)
+            {
+                onSelectedItemChanged?.Invoke(inventory[selectedItemIndex]);
+            }            
         }
 
-        // If the selected item has changed, invoke the event for selection change.
-        if (selectedItemIndex != lastIndex)
-        {
-            onSelectedItemChanged?.Invoke(inventory[selectedItemIndex]);
-        }
     }
 
     /// <summary>

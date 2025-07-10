@@ -92,13 +92,13 @@ public class PlayerInteractor : MonoBehaviour
                 
                 var displayer = interactable.GetComponent<ItemDisplayer>();
 
-                if (selected == null || rightItem == null)
-                {
-                    isItemValid = false;
-                }
-                else if (displayer != null && displayer.IsItemDisplayed)
+                if (displayer != null && displayer.IsItemDisplayed)
                 {
                     isItemValid = true;
+                }
+                else if (selected == null || rightItem == null )
+                {
+                    isItemValid = false;
                 }
                 else if (itemMatcher.AcceptEra)
                 {

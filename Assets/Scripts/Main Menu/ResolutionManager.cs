@@ -20,6 +20,7 @@ public class ResolutionManager : MonoBehaviour
         filteredResolutions = new List<Resolution>();
 
         resolutionDropdown.ClearOptions();
+        
         //gets current monitor refresh Rate
         currentHZ = Screen.currentResolution.refreshRateRatio.numerator;
 

@@ -108,10 +108,10 @@ namespace GameConsole
             Log("Console initialized. Type 'help' for a list of commands.");
         }
 
-        private void Start()
-        {
-            playerPreferences = Resources.Load<PlayerPreferences>("");
-        }
+        // private void Start()
+        // {
+        //     playerPreferences = Resources.Load<PlayerPreferences>("");
+        // }
 
         private void OnEnable()
         {

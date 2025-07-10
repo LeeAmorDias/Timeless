@@ -96,6 +96,20 @@ namespace GameConsole
                         action: args => ClearInventory()
                     )
                 },
+                {
+                    "reload_inspectables",
+                    new CommandDefinition(
+                        action: args =>
+                        {
+                            foreach (var inspectable in Resources.FindObjectsOfTypeAll<Inspectable>())
+                            {
+                                inspectable.gameObject.SetActive(true);
+                            }
+
+                            Log("Reloading inspectables...");
+                        }
+                    )
+                }
             };
 
             // Check if references are properly assigned.

@@ -88,9 +88,17 @@ public class PlayerInteractor : MonoBehaviour
             {
                 Item selected = playerInventory.GetSelectedItem();
                 Item rightItem = itemMatcher.RightItem;
+
                 if (selected == null || rightItem == null)
                 {
                     isItemValid = false;
+                }
+                
+                var displayer = interactable.GetComponent<ItemDisplayer>();
+
+                if (displayer != null && displayer.IsItemDisplayed)
+                {
+                    isItemValid = true;
                 }
                 else if (itemMatcher.AcceptEra)
                 {

@@ -104,9 +104,6 @@ public class Inspectable : MonoBehaviour
             inspectionsHandler.onInspectionEnded.AddListener(OnInspectionEnded);
             crosshairUI = FindFirstObjectByType<CrosshairUI>();
             crosshairUI?.gameObject.SetActive(false);
-
-            var inventory = FindFirstObjectByType<PlayerInventory>();
-            inventory.SetCanChangeSelection(false);
         }
         else
         {
@@ -118,9 +115,6 @@ public class Inspectable : MonoBehaviour
     private void OnInspectionStarted()
     {
         Log("Inspection started");
-
-        var inventory = FindFirstObjectByType<PlayerInventory>();
-        inventory.SetCanChangeSelection(false);
     }
 
     private void OnInspectionEnded(bool wasAddedToInventory)
@@ -131,21 +125,9 @@ public class Inspectable : MonoBehaviour
         inspectionsHandler.onInspectionEnded.RemoveListener(OnInspectionEnded);
         onInspectionEnded.Invoke(!wasAddedToInventory);
 
-        var inventory = FindFirstObjectByType<PlayerInventory>();
-        inventory.SetCanChangeSelection(true);
         if (wasAddedToInventory) Log("Inspection ended with item was added to the inventory");
         else Log("Inspection ended");
 
-    }
-    public void OnInspectionEndedFromInv()
-    {
-        inspectingFromInv = false;
-        crosshairUI?.gameObject.SetActive(true);
-        inspectionsHandler.onInspectionStarted.RemoveListener(OnInspectionStarted);
-        inspectionsHandler.onInspectionEnded.RemoveListener(OnInspectionEnded);
-
-        var inventory = FindFirstObjectByType<PlayerInventory>();
-        inventory.SetCanChangeSelection(true);
     }
 
     /// <summary>

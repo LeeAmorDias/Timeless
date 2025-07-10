@@ -193,6 +193,8 @@ public class InspectionsHandler : MonoBehaviour
         // Wait one frame to ensure initialization is complete.
         yield return null;
 
+        var inventory = FindFirstObjectByType<PlayerInventory>();
+        inventory.SetCanChangeSelection(false);
         //inspectingObject.transform.localRotation = Quaternion.identity;
 
         // Enable the inspection camera.
@@ -248,7 +250,7 @@ public class InspectionsHandler : MonoBehaviour
             // Handle returning the item without adding it to the inventory.
             if (playerInputs.ReturnButtonDown)
             {
-                
+
                 currentItem = null;
                 Destroy(inspectingObject);
                 GetComponent<Camera>().enabled = false;
@@ -256,12 +258,12 @@ public class InspectionsHandler : MonoBehaviour
                 else onInspectionEnded.Invoke(false);
                 crosshairUI?.gameObject.SetActive(true);
                 inspecting = false;
-                
+
                 break;
             }
 
             if (playerInputs.GrabButtonDown && inspectingFromInv)
-            {      
+            {
                 currentItem = null;
                 Destroy(inspectingObject);
                 GetComponent<Camera>().enabled = false;
@@ -278,12 +280,13 @@ public class InspectionsHandler : MonoBehaviour
         }
 
         // If inspection ends without adding the item, trigger the event with false.
-        if(!inspectingFromInv)
+        if (!inspectingFromInv)
             onInspectionEnded.Invoke(false);
         inspectionInstructionsFromInv.SetActive(false);
         inspectionInstructions.SetActive(false);
         inspectionInstructionsNoGrab.SetActive(false);
         onInspectionEndedFromInv.Invoke();
-        
+
+        inventory.SetCanChangeSelection(true);
     }
 }

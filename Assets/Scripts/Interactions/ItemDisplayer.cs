@@ -50,6 +50,8 @@ public class ItemDisplayer : MonoBehaviour
     // The current item that is displayed.
     private Item displayedItem;
 
+    public bool IsItemDisplayed => displayedObject != null && displayedItem != null;
+
     private void Start()
     {
         // Get the player's inventory object.

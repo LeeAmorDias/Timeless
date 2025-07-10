@@ -80,7 +80,7 @@ public class Inspectable : MonoBehaviour
 
     private CrosshairUI crosshairUI;
 
-    [HideInInspector]public bool inspectingFromInv;
+    [HideInInspector] public bool inspectingFromInv;
 
     private PauseManager pauseManager;
 
@@ -96,14 +96,20 @@ public class Inspectable : MonoBehaviour
 
     public void StartInspection(Item item)
     {
-        if(pauseManager.IsPaused == false){
+        if (!pauseManager.IsPaused)
+        {
             if (inspectionsHandler == null) FindFirstObjectByType<InspectionsHandler>();
             inspectionsHandler.StartInspection(item, canBeAddedToInv, inspectingFromInv);
             inspectionsHandler.onInspectionStarted.AddListener(OnInspectionStarted);
             inspectionsHandler.onInspectionEnded.AddListener(OnInspectionEnded);
             crosshairUI = FindFirstObjectByType<CrosshairUI>();
             crosshairUI?.gameObject.SetActive(false);
-        }else{
+
+            var inventory = FindFirstObjectByType<PlayerInventory>();
+            inventory.SetCanChangeSelection(false);
+        }
+        else
+        {
             this.gameObject.SetActive(true);
         }
 
@@ -112,27 +118,34 @@ public class Inspectable : MonoBehaviour
     private void OnInspectionStarted()
     {
         Log("Inspection started");
+
+        var inventory = FindFirstObjectByType<PlayerInventory>();
+        inventory.SetCanChangeSelection(false);
     }
 
     private void OnInspectionEnded(bool wasAddedToInventory)
-    {  
+    {
         inspectingFromInv = false;
         crosshairUI?.gameObject.SetActive(true);
         inspectionsHandler.onInspectionStarted.RemoveListener(OnInspectionStarted);
         inspectionsHandler.onInspectionEnded.RemoveListener(OnInspectionEnded);
         onInspectionEnded.Invoke(!wasAddedToInventory);
+
+        var inventory = FindFirstObjectByType<PlayerInventory>();
+        inventory.SetCanChangeSelection(true);
         if (wasAddedToInventory) Log("Inspection ended with item was added to the inventory");
         else Log("Inspection ended");
 
     }
     public void OnInspectionEndedFromInv()
-    {  
+    {
         inspectingFromInv = false;
         crosshairUI?.gameObject.SetActive(true);
         inspectionsHandler.onInspectionStarted.RemoveListener(OnInspectionStarted);
         inspectionsHandler.onInspectionEnded.RemoveListener(OnInspectionEnded);
-        
 
+        var inventory = FindFirstObjectByType<PlayerInventory>();
+        inventory.SetCanChangeSelection(true);
     }
 
     /// <summary>

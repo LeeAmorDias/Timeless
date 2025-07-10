@@ -69,7 +69,7 @@ public class PlayerCameraRotation : MonoBehaviour
         yaw = rot.y;
         pitch = rot.x;
 
-        targetYaw = yaw;    
+        targetYaw = yaw;
         targetPitch = pitch;
     }
 
@@ -132,19 +132,9 @@ public class PlayerCameraRotation : MonoBehaviour
     /// </summary>
     private void LimitCamera()
     {
-        // Clamp the target pitch to prevent exceeding max vertical limits.
-        if (targetPitch > maxLookUpDownAndle)
-        {
-            targetPitch = Mathf.Lerp(pitch, maxLookUpDownAndle, .5f * Time.deltaTime);
-        }
-        else if (targetPitch < -maxLookUpDownAndle)
-        {
-            targetPitch = Mathf.Lerp(pitch, -maxLookUpDownAndle, .5f * Time.deltaTime);
-        }
-
         // Clamp pitch within the limits.
-        pitch = Mathf.Clamp(pitch, -85f, 85f);
-        targetPitch = Mathf.Clamp(targetPitch, -85f, 85f);
+        pitch = Mathf.Clamp(pitch, -maxLookUpDownAndle, maxLookUpDownAndle);
+        targetPitch = Mathf.Clamp(targetPitch, -maxLookUpDownAndle, maxLookUpDownAndle);
     }
 
     /// <summary>

@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -27,6 +28,9 @@ public class Pedestal : Interactable
     private float timeOnCristal = 0;
 
     public bool HaveCristal { get; private set; } = false;
+
+    [SerializeField]
+    private float sensitivity = 0.25f;
 
     private void Awake()
     {
@@ -90,8 +94,6 @@ public class Pedestal : Interactable
     {
         ActivatePedestal();
 
-        float rotationSpeed = 25f;
-        float smoothingFactor = 0.1f;
         Quaternion targetRotation = cristalSpawnPos.rotation;
         Quaternion lineRendererTargetRotation = lineRenderer.transform.rotation;
 
@@ -102,7 +104,7 @@ public class Pedestal : Interactable
         timeOnCristal = 0;
         while (!coroutineEnded)
         {
-            HandlePlayerInput(rotationSpeed, smoothingFactor, ref targetRotation, ref lineRendererTargetRotation);
+            HandlePlayerInput(ref targetRotation, ref lineRendererTargetRotation);
             HandleLaserBeam();
             yield return null;
         }
@@ -110,20 +112,20 @@ public class Pedestal : Interactable
         DeactivatePedestal();
     }
 
-    private void HandlePlayerInput(float rotationSpeed, float smoothingFactor, ref Quaternion targetRotation, ref Quaternion lineRendererTargetRotation)
+    private void HandlePlayerInput(ref Quaternion targetRotation, ref Quaternion lineRendererTargetRotation)
     {
         // Rotation handling for cristal and laser
-        if (Mathf.Abs(playerInputs.MoveInput.x) > 1e-5f)
+        if (Mathf.Abs(playerInputs.LookInput.x) > 1e-5f)
         {
-            float yRotation = playerInputs.MoveInput.x * rotationSpeed * Time.deltaTime;
+            float yRotation = playerInputs.LookInput.x * sensitivity;
             targetRotation *= Quaternion.Euler(0, yRotation, 0);
-            cristalSpawnPos.localRotation = Quaternion.Slerp(cristalSpawnPos.localRotation, targetRotation, smoothingFactor);
+            cristalSpawnPos.localRotation = targetRotation;
         }
 
-        if (Mathf.Abs(playerInputs.MoveInput.y) > 1e-5f)
+        if (Mathf.Abs(playerInputs.LookInput.y) > 1e-5f)
         {
             // Calculate rotation increment from input
-            float xRotation = playerInputs.MoveInput.y * rotationSpeed * Time.deltaTime;
+            float xRotation = playerInputs.LookInput.y * sensitivity;
 
             // Apply the rotation increment
             lineRendererTargetRotation *= Quaternion.Euler(xRotation, 0, 0);
@@ -142,7 +144,7 @@ public class Pedestal : Interactable
             lineRendererTargetRotation = Quaternion.Euler(targetEulerAngles.x, 180, 0);
 
             // Smoothly interpolate to the new rotation
-            lineRenderer.transform.localRotation = Quaternion.Slerp(lineRenderer.transform.localRotation, lineRendererTargetRotation, smoothingFactor);
+            lineRenderer.transform.localRotation = lineRendererTargetRotation;
 
         }
 

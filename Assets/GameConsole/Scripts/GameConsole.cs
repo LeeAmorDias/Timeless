@@ -49,27 +49,25 @@ namespace GameConsole
         public Dictionary<string, CommandDefinition> Commands
             => new(commands);
 
+        private PlayerPreferences playerPreferences;
 
         private void Awake()
         {
             // Initialize the commands dictionary with placeholder commands.
             commands = new Dictionary<string, CommandDefinition>
             {
-                // Example 'help' command which lists all available commands
                 {
                     "help",
                     new CommandDefinition(
                         action: args => ShowHelp() // Action to show help
                     )
                 },
-                // Command to restart the current scene
                 {
                     "restart_scene",
                     new CommandDefinition(
                         action: args => RestartScene() // Action to restart the scene
                     )
                 },
-                // Command to start the game with a specific scene ID
                 {
                     "start_game",
                     new CommandDefinition(
@@ -108,6 +106,11 @@ namespace GameConsole
             }
             open = canvas.activeInHierarchy;
             Log("Console initialized. Type 'help' for a list of commands.");
+        }
+
+        private void Start()
+        {
+            playerPreferences = Resources.Load<PlayerPreferences>("");
         }
 
         private void OnEnable()

@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal; // Use Rendering.HighDefinition if you're on HDRP
+using UnityEngine.Rendering.Universal;
 
 public class DOFToggler : MonoBehaviour
 {

@@ -99,6 +99,7 @@ public class Inspectable : MonoBehaviour
         if (!pauseManager.IsPaused)
         {
             if (inspectionsHandler == null) FindFirstObjectByType<InspectionsHandler>();
+            Log($"[{gameObject.name}] Starting inspection");
             inspectionsHandler.StartInspection(item, canBeAddedToInv, inspectingFromInv);
             inspectionsHandler.onInspectionStarted.AddListener(OnInspectionStarted);
             inspectionsHandler.onInspectionEnded.AddListener(OnInspectionEnded);
@@ -109,12 +110,11 @@ public class Inspectable : MonoBehaviour
         {
             this.gameObject.SetActive(true);
         }
-
     }
 
     private void OnInspectionStarted()
     {
-        Log("Inspection started");
+        Log($"[{gameObject.name}] Inspection started");
     }
 
     private void OnInspectionEnded(bool wasAddedToInventory)
@@ -125,8 +125,8 @@ public class Inspectable : MonoBehaviour
         inspectionsHandler.onInspectionEnded.RemoveListener(OnInspectionEnded);
         onInspectionEnded.Invoke(!wasAddedToInventory);
 
-        if (wasAddedToInventory) Log("Inspection ended with item was added to the inventory");
-        else Log("Inspection ended");
+        if (wasAddedToInventory) Log($"[{gameObject.name}] Inspection ended with item was added to the inventory");
+        else Log($"[{gameObject.name}]  Inspection ended");
 
     }
 

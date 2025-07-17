@@ -97,6 +97,7 @@ public class InspectionsHandler : MonoBehaviour
     private CrosshairUI crosshairUI;
 
     [HideInInspector] public bool inspecting;
+
     private Inspectable inspectable;
 
 
@@ -282,6 +283,7 @@ public class InspectionsHandler : MonoBehaviour
         // If inspection ends without adding the item, trigger the event with false.
         if (!inspectingFromInv)
             onInspectionEnded.Invoke(false);
+            
         inspectionInstructionsFromInv.SetActive(false);
         inspectionInstructions.SetActive(false);
         inspectionInstructionsNoGrab.SetActive(false);

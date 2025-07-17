@@ -102,6 +102,13 @@ public class Interactable : MonoBehaviour
     [Tooltip("Event triggered when the object is interacted with.")]
     public UnityEvent InteractEvent;
 
+    [Header("Debugging")]
+    [Tooltip("Enable this to display debug messages from this script in the Console.")]
+    [SerializeField] private bool showDebugMessages = false; // Flag to enable or disable debug messages.
+
+    [SerializeField, Tooltip("If enabled, debug messages will include the object's name as an identifier."), ShowIf(nameof(showDebugMessages))]
+    private bool identifyObject = true; // Flag to include the object name in debug messages if debugging is enabled.
+
     private InspectionsHandler inspectionsHandler;
 
     /// <summary>
@@ -112,27 +119,60 @@ public class Interactable : MonoBehaviour
     {
         inspectionsHandler = FindFirstObjectByType<InspectionsHandler>();
 
-        // Only proceed if the object is marked as interactable and the player isnt inspecting.
+        // Only proceed if the object is marked as interactable and the player isn't inspecting.
         if (CanInteract && !inspectionsHandler.inspecting)
         {
+            Log("Interaction started.");
+
             // Invoke any assigned interaction events.
             InteractEvent?.Invoke();
+            Log("InteractEvent invoked.");
 
             // Add the object to the player's inventory if applicable.
             if (addToInv)
             {
                 FindFirstObjectByType<PlayerInventory>()?.AddItemToInventory(item);
+                Log($"Item '{item?.name}' added to inventory.");
                 // Disable the game object after adding to the inventory.
                 gameObject.SetActive(false);
+                Log("GameObject deactivated after adding to inventory.");
             }
             // Disable future interactions if it is a single-use interaction.
-            if (interactOnce) CanInteract = false;
+            if (interactOnce)
+            {
+                CanInteract = false;
+                Log("Interaction disabled (single-use).");
+            }
 
-            if (pickUpSounds != null && pickUpSounds.Length > 0 && audioPrefab != null) 
+            if (pickUpSounds != null && pickUpSounds.Length > 0 && audioPrefab != null)
             {
                 AudioClip clip = pickUpSounds[Random.Range(0, pickUpSounds.Length)];
                 Instantiate(audioPrefab, transform.position, Quaternion.identity).PlayOneShot(clip, volume);
+                Log($"Played pickup sound: '{clip?.name}'.");
             }
+
+            Log("Interaction finished.");
+        }
+        else
+        {
+            Log("Interaction ignored: either not interactable or player is inspecting.");
+        }
+    }
+
+    /// <summary>
+    /// Logs a debug message to the Console if debugging is enabled.
+    /// Includes the object's name as an identifier if 'identifyObject' is true.
+    /// </summary>
+    /// <param name="message">The debug message to log.</param>
+    private void Log(string message)
+    {
+        // Check if debug messages are enabled.
+        if (showDebugMessages)
+        {
+            if (identifyObject)
+                Debug.Log(message, this); // Log with object name if 'identifyObject' is true.
+            else
+                Debug.Log(message); // Log without object name.
         }
     }
 }

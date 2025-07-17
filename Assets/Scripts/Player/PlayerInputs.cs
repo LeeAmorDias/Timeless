@@ -281,7 +281,7 @@ public class PlayerInputs : Singleton<PlayerInputs>
             UnbindAction(inputActions.Player.Inspect, OnInspectPerformed, OnInspectCanceled);
             UnbindAction(inputActions.Player.Pause, OnPausePerformed, OnPauseCanceled);
         }
-        
+
         InputSystem.onActionChange -= OnActionChange; // Unsubscribe from input action changes.
     }
 

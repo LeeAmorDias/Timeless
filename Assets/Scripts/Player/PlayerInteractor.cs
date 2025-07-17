@@ -35,8 +35,8 @@ public class PlayerInteractor : MonoBehaviour
     [SerializeField] private bool showDebugMessages = false; // Flag to enable or disable debug messages.
 
     [SerializeField, Tooltip("If enabled, debug messages will include the object's name as an identifier."), ShowIf(nameof(showDebugMessages))]
-
     private bool identifyObject = true; // Flag to include the object name in debug messages if debugging is enabled.
+    
     private PlayerInputs playerInputs; // Reference to the PlayerInputs script to get player input.
     private PlayerInventory playerInventory; // Reference to the PlayerInventory script to access the player's inventory.
     private CrosshairUI crosshair; // The crosshair UI component that will change size based on interaction availability.
@@ -103,12 +103,10 @@ public class PlayerInteractor : MonoBehaviour
                 else if (itemMatcher.AcceptEra)
                 {
                     isItemValid = selected.era == itemMatcher.Era;
-                    Debug.Log($"{(isItemValid ? "Era match" : "Era mismatch")}");
                 }
                 else
                 {
                     isItemValid = selected == rightItem;
-                    Debug.Log($"{(isItemValid ? "Item match" : "Item mismatch")}");
                 }
             }
             else isItemValid = true;

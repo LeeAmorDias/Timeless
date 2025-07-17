@@ -96,7 +96,7 @@ public class PlayerInventory : MonoBehaviour
             if (selectedItemIndex != lastIndex)
             {
                 onSelectedItemChanged?.Invoke(inventory[selectedItemIndex]);
-            }            
+            }
         }
 
     }
@@ -125,7 +125,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void AddItemsToInventory(IEnumerable<Item> items)
     {
-        foreach(Item item in items)
+        foreach (Item item in items)
         {
             AddItemToInventory(item);
         }
@@ -133,7 +133,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void RemoveItemsFromInventory(IEnumerable<Item> items)
     {
-        foreach(Item item in items)
+        foreach (Item item in items)
         {
             RemoveItemFromInventory(item);
         }
@@ -141,7 +141,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void RemoveAllItemsFromInventory()
     {
-        foreach(Item item in inventory)
+        foreach (Item item in inventory)
         {
             RemoveItemFromInventory(item);
         }
@@ -200,11 +200,18 @@ public class PlayerInventory : MonoBehaviour
     public Item GetSelectedItem()
     {
         // Return the selected item if there is one.
-        if (inventory.Count > 0 && selectedItemIndex >= 0 && selectedItemIndex < inventory.Count)
+        if (inventory.Count == 0)
         {
-            return inventory[selectedItemIndex];
+            Log("GetSelectedItem: Inventory is empty.");
+            return null;
         }
-        return null; // Return null if no item is selected.
+        if (selectedItemIndex < 0 || selectedItemIndex >= inventory.Count)
+        {
+            Log($"GetSelectedItem: No valid selection (selectedItemIndex={selectedItemIndex}).");
+            return null;
+        }
+        Log($"GetSelectedItem: Returning item {inventory[selectedItemIndex].ID} | {inventory[selectedItemIndex].Name}.");
+        return inventory[selectedItemIndex];
     }
 
     /// <summary>

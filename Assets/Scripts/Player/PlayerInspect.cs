@@ -4,7 +4,6 @@ public class PlayerInspect : MonoBehaviour
 {
     private PlayerInputs playerInputs; // Reference to the PlayerInputs script to get player input.
     private PlayerInventory playerInventory; // Reference to the PlayerInventory script to get player inventory.
-    private Inspectable inspectable; // Reference to the Inspectable script to get inspectable.
     private InspectionsHandler inspectionsHandler; // Reference to the InspectionsHandler script to get inspectionsHandler.
 
     private bool canInspect = true;
@@ -16,8 +15,6 @@ public class PlayerInspect : MonoBehaviour
         playerInputs = FindFirstObjectByType<PlayerInputs>();
         // Find the PlayerInventory component.
         playerInventory = FindFirstObjectByType<PlayerInventory>();
-        // Find the inspectable component.
-        inspectable = FindFirstObjectByType<Inspectable>();
         // Find the inspectionsHandler component.
         inspectionsHandler = FindFirstObjectByType<InspectionsHandler>();
 
@@ -34,14 +31,19 @@ public class PlayerInspect : MonoBehaviour
             Inspect();
         }
     }
-    //if there is a item selected and if there is then stratsInspection and notifies it is inspecting from the inventory
+
+    // If there is an item selected, start inspection and notify it is inspecting from the inventory
     public void Inspect()
     {
         Item item = playerInventory.GetSelectedItem() ?? null;
         if (item != null)
         {
-            inspectable.inspectingFromInv = true;
-            inspectable.StartInspection(item);
+            Debug.Log($"Inspecting item: {item.name}");
+            inspectionsHandler.StartInspection(item, false, true);
+        }
+        else
+        {
+            Debug.Log("No item selected to inspect.");
         }
     }
 

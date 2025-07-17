@@ -11,11 +11,12 @@ public class PauseManager : MonoBehaviour
 
     [SerializeField]
     private GameObject PauseMenu;
-
     [SerializeField]
     private GameObject Crosshair;
     [SerializeField]
     private GameObject invUI;
+    [SerializeField]
+    private DOFToggler dOFToggler;
 
     private bool canPause = true;
 
@@ -43,20 +44,20 @@ public class PauseManager : MonoBehaviour
     }
     public void ButtonPressed()
     {
-        IsPaused = !IsPaused;
         PauseSystem();
+        IsPaused = !IsPaused;
     }
 
     private void PauseSystem()
     {
-        if (IsPaused)
+        if (!IsPaused)
         {
             Crosshair.SetActive(false);
-
             invUI?.SetActive(false);
             PauseMenu.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
+            dOFToggler.ActivateDOF();
         }
         else
         {
@@ -73,6 +74,7 @@ public class PauseManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             PauseMenu.SetActive(false);
             Time.timeScale = 1;
+            dOFToggler.DeactivateDOF();
         }
     }
 

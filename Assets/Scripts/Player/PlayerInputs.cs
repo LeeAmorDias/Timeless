@@ -311,4 +311,13 @@ public class PlayerInputs : Singleton<PlayerInputs>
     private void OnInspectPerformed(InputAction.CallbackContext context) { InspectButtonDown = true; IsInspecting = true; }
     private void OnPauseCanceled(InputAction.CallbackContext context) { PauseButtonUp = true; PauseButton = false; }
     private void OnPausePerformed(InputAction.CallbackContext context) { PauseButtonDown = true; PauseButton = true; }
+
+    public float GetSensitivity()
+    {
+        return mouseSensitivity;
+    }
+    public void changeSensitivity(float sensitivity)
+    {
+        mouseSensitivity = sensitivity;
+    }
 }

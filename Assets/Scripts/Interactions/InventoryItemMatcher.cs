@@ -64,6 +64,8 @@ public class InventoryItemMatcher : MonoBehaviour
     /// </summary>
     private bool isRightItem = false;
 
+    public int puzzleNumber{ get; private set; }
+
     private void Start()
     {
         // Get the player's inventory object.
@@ -75,6 +77,7 @@ public class InventoryItemMatcher : MonoBehaviour
             // Log a warning if PlayerInventory is not found.
             Debug.LogWarning($"{nameof(InventoryItemMatcher)} could not find a {nameof(PlayerInventory)} in the scene. Please ensure it is set up.");
         }
+        puzzleNumber = RightItem.Puzzlenumber;
     }
 
 

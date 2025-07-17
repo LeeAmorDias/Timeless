@@ -167,11 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 4
-  rightItem: {fileID: 11400000, guid: 688de5866d7f0394b9531868b064c5f0, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 0}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 0
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -570,11 +570,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 4
-  rightItem: {fileID: 11400000, guid: 21bad4fb16868dc4084960a315c1d4cf, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 0}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 0
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -1519,6 +1519,7 @@ GameObject:
   - component: {fileID: 378836452}
   - component: {fileID: 378836451}
   - component: {fileID: 378836453}
+  - component: {fileID: 378836454}
   m_Layer: 0
   m_Name: SceneManaging
   m_TagString: Untagged
@@ -1583,6 +1584,20 @@ MonoBehaviour:
             m_StringArgument: PrototypeScene
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &378836454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378836450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71cceafa5ac000f4a98edc363cb5b616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 1c64dfd2202c4534281fda1c9400ba26, type: 2}
+  playerPreferences: {fileID: 11400000, guid: b4824c4d5e2439b49be80dded05c5490, type: 2}
 --- !u!1 &395118645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2691,6 +2706,135 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &655442877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 655442879}
+  - component: {fileID: 655442878}
+  m_Layer: 0
+  m_Name: Sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &655442878
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655442877}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 1c64dfd2202c4534281fda1c9400ba26, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &655442879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655442877}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.43526968, y: -0.55726147, z: -0.43526986, w: -0.5572613}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &661821736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,11 +2936,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 4
-  rightItem: {fileID: 11400000, guid: d0b8abb41a4343145b7ae9de4d805343, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 0}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 0
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -4311,11 +4455,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 4
-  rightItem: {fileID: 11400000, guid: 292f106608ae1e14ea98675734fa3793, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 0}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 0
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -4729,11 +4873,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 4
-  rightItem: {fileID: 11400000, guid: d0b8abb41a4343145b7ae9de4d805343, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 0}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 0
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -5138,6 +5282,10 @@ PlayableDirector:
     value: {fileID: 478423238}
   - key: {fileID: 8850041898611456554, guid: 2aa28b95cb7f025448a878db5add92f2, type: 2}
     value: {fileID: 1861904793}
+  - key: {fileID: 6929306930174691060, guid: 2aa28b95cb7f025448a878db5add92f2, type: 2}
+    value: {fileID: 655442878}
+  - key: {fileID: 1358564172463911183, guid: 2aa28b95cb7f025448a878db5add92f2, type: 2}
+    value: {fileID: 655442878}
   m_ExposedReferences:
     m_References:
     - af07db6963605234bac313079eefef67: {fileID: 1639460294}
@@ -5592,11 +5740,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 4
-  rightItem: {fileID: 11400000, guid: 292f106608ae1e14ea98675734fa3793, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 0}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 0
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -5935,11 +6083,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 4
-  rightItem: {fileID: 11400000, guid: 688de5866d7f0394b9531868b064c5f0, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 0}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 0
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -8153,11 +8301,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  era: 4
-  rightItem: {fileID: 11400000, guid: 21bad4fb16868dc4084960a315c1d4cf, type: 2}
+  <Era>k__BackingField: 0
+  <RightItem>k__BackingField: {fileID: 0}
   showDebugMessages: 0
   identifyObject: 1
-  acceptEra: 1
+  <AcceptEra>k__BackingField: 0
   acceptOnlyRightPuzzle: 1
   selectedItem:
     m_PersistentCalls:
@@ -8320,6 +8468,7 @@ SceneRoots:
   - {fileID: 129735307}
   - {fileID: 1250573638}
   - {fileID: 989599275}
+  - {fileID: 655442879}
   - {fileID: 378836452}
   - {fileID: 530009548}
   - {fileID: 260507601}

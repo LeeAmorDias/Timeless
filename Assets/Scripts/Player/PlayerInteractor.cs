@@ -102,7 +102,8 @@ public class PlayerInteractor : MonoBehaviour
                 }
                 else if (itemMatcher.AcceptEra)
                 {
-                    isItemValid = selected.era == itemMatcher.Era;
+                    isItemValid = selected.era == itemMatcher.Era && selected.Puzzlenumber == itemMatcher.puzzleNumber;
+                    Debug.Log($"{(isItemValid ? "Era match" : "Era mismatch")}");
                 }
                 else
                 {

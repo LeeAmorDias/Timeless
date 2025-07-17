@@ -6,44 +6,30 @@ public class SettingsManager : MonoBehaviour
     [SerializeField]
     private PlayerPreferences playerPreferences;
     [SerializeField]
-    private Image fillVolume;
+    private Slider fillVolume;
     [SerializeField]
-    private Image fillSensitivity;
+    private Slider fillSensitivity;
     [SerializeField]
     private ApplyPlayersPreferences applyPlayersPreferences;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    private bool canUpdate;
+
+    private void Awake()
     {
-        fillVolume.fillAmount = playerPreferences.masterVolume/10;
-        fillSensitivity.fillAmount = playerPreferences.mouseSensitivity / 10;
+        canUpdate = false;
+        fillVolume.value = playerPreferences.masterVolume;
+        fillSensitivity.value = playerPreferences.mouseSensitivity;
+        canUpdate = true;
     }
 
-    public void TakeVolume()
+    public void UpdateThePreferences()
     {
-        fillVolume.fillAmount -= 0.1f;
-        UpdateThePreferences();
-    }
-    public void AddVolume()
-    {
-        fillVolume.fillAmount += 0.1f;
-        UpdateThePreferences();
-    }
-    public void TakeSensitivity()
-    {
-        fillSensitivity.fillAmount -= 0.1f;
-        UpdateThePreferences();
-    }
-    public void AddSensitivity()
-    {
-        fillSensitivity.fillAmount += 0.1f;
-        UpdateThePreferences();
-    }
-
-    // Update is called once per frame
-    private void UpdateThePreferences()
-    {
-        playerPreferences.masterVolume = fillVolume.fillAmount * 10;
-        playerPreferences.mouseSensitivity = fillSensitivity.fillAmount * 10;
-        applyPlayersPreferences.UpdateThePreferences();
+        if (canUpdate)
+        {
+            playerPreferences.masterVolume = fillVolume.value;
+            playerPreferences.mouseSensitivity = fillSensitivity.value;
+            applyPlayersPreferences.UpdateThePreferences();
+            Debug.Log("update");            
+        }
     }
 }

@@ -1519,6 +1519,7 @@ GameObject:
   - component: {fileID: 378836452}
   - component: {fileID: 378836451}
   - component: {fileID: 378836453}
+  - component: {fileID: 378836454}
   m_Layer: 0
   m_Name: SceneManaging
   m_TagString: Untagged
@@ -1583,6 +1584,20 @@ MonoBehaviour:
             m_StringArgument: PrototypeScene
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &378836454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378836450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71cceafa5ac000f4a98edc363cb5b616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 1c64dfd2202c4534281fda1c9400ba26, type: 2}
+  playerPreferences: {fileID: 11400000, guid: b4824c4d5e2439b49be80dded05c5490, type: 2}
 --- !u!1 &395118645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2717,7 +2732,7 @@ AudioSource:
   m_GameObject: {fileID: 655442877}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 1c64dfd2202c4534281fda1c9400ba26, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1

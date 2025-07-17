@@ -44,8 +44,8 @@ public class PauseManager : MonoBehaviour
     }
     public void ButtonPressed()
     {
-        IsPaused = !IsPaused;
         PauseSystem();
+        IsPaused = !IsPaused;
     }
 
     private void PauseSystem()

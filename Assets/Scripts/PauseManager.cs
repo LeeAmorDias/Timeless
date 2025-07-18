@@ -12,6 +12,8 @@ public class PauseManager : MonoBehaviour
     [SerializeField]
     private GameObject PauseMenu;
     [SerializeField]
+    private GameObject settingsMenu;
+    [SerializeField]
     private GameObject Crosshair;
     [SerializeField]
     private GameObject invUI;
@@ -73,6 +75,7 @@ public class PauseManager : MonoBehaviour
             }
             Cursor.lockState = CursorLockMode.Locked;
             PauseMenu.SetActive(false);
+            settingsMenu.SetActive(false);
             Time.timeScale = 1;
             dOFToggler.DeactivateDOF();
         }

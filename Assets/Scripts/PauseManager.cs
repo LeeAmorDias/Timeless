@@ -22,6 +22,9 @@ public class PauseManager : MonoBehaviour
 
     private bool canPause = true;
 
+    private PlayerCameraRotation cameraController;
+    private PlayerMovement playerMovement;
+
     private void Start()
     {
         //Ensures the game will start moving
@@ -35,7 +38,11 @@ public class PauseManager : MonoBehaviour
         {
             Debug.LogWarning($"{nameof(InspectionsHandler)} needs a {nameof(PlayerInputs)} object in the scene.");
         }
+
+        playerMovement = FindFirstObjectByType<PlayerMovement>();
+        cameraController = FindFirstObjectByType<PlayerCameraRotation>();
     }
+
     private void Update()
     {
         if (!canPause) return;
@@ -60,6 +67,9 @@ public class PauseManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
             dOFToggler.ActivateDOF();
+
+            playerMovement?.SetCanMove(false);
+            cameraController?.SetCanLookAround(false);
         }
         else
         {
@@ -78,6 +88,8 @@ public class PauseManager : MonoBehaviour
             settingsMenu.SetActive(false);
             Time.timeScale = 1;
             dOFToggler.DeactivateDOF();
+            playerMovement?.SetCanMove(true);
+            cameraController?.SetCanLookAround(true);
         }
     }
 

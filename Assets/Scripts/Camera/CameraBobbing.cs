@@ -85,7 +85,13 @@ public class CameraBobbing : MonoBehaviour
     // and ensures the camera looks at the target.
     private void Update()
     {
-        if (!enable || rb == null || cameraBobber == null || cameraPivot == null) return;
+        if (rb == null || cameraBobber == null || cameraPivot == null) return;
+
+        if (!enable)
+        {
+            ResetPosition();
+            return;
+        }
 
         if (rb.linearVelocity.magnitude > 1e-5)
         {

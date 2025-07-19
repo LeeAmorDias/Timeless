@@ -24,6 +24,7 @@ public class PauseManager : MonoBehaviour
 
     private PlayerCameraRotation cameraController;
     private PlayerMovement playerMovement;
+    private CameraBobbing cameraBobbing;
 
     private void Start()
     {
@@ -41,6 +42,7 @@ public class PauseManager : MonoBehaviour
 
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         cameraController = FindFirstObjectByType<PlayerCameraRotation>();
+        cameraBobbing = FindFirstObjectByType<CameraBobbing>();
     }
 
     private void Update()
@@ -70,6 +72,7 @@ public class PauseManager : MonoBehaviour
 
             playerMovement?.SetCanMove(false);
             cameraController?.SetCanLookAround(false);
+            cameraBobbing?.SetEnabled(false);
         }
         else
         {
@@ -90,6 +93,7 @@ public class PauseManager : MonoBehaviour
             dOFToggler.DeactivateDOF();
             playerMovement?.SetCanMove(true);
             cameraController?.SetCanLookAround(true);
+            cameraBobbing?.SetEnabled(true);
         }
     }
 

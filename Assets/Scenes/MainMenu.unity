@@ -1961,7 +1961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 278670681675467729, guid: 93d3e66b17481144aa2185b5b65234d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 632025390896264535, guid: 93d3e66b17481144aa2185b5b65234d2, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2095,6 +2095,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5787291414195199154, guid: 93d3e66b17481144aa2185b5b65234d2, type: 3}
+      propertyPath: m_Value
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6134508439900971955, guid: 93d3e66b17481144aa2185b5b65234d2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -2121,7 +2125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6490908579110690839, guid: 93d3e66b17481144aa2185b5b65234d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6576490849409899745, guid: 93d3e66b17481144aa2185b5b65234d2, type: 3}
       propertyPath: resolutionDropdown
